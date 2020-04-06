@@ -1,0 +1,335 @@
+<krpano>
+
+
+<action name="default_actions">
+hide_all_sub_menu();
+hideallfloorplans();
+stoptween();
+hideallinfos();
+reset_all_video();
+</action>
+<!-- addscenenames(); -->
+
+
+<events onmousedown="hideall();"  />
+        
+
+
+
+<action name="global_actions">
+set(scene[scene_4th_hole].onstart,default_actions();map_floorplan();activatespot(map_hp4,-186.82););
+set(scene[scene_7th_hole].onstart,default_actions();map_floorplan();activatespot(map_hp7,0););
+set(scene[scene_14th_hole].onstart,default_actions();map_floorplan();activatespot(map_hp14,0););
+set(scene[scene_16th_hole].onstart,default_actions();map_floorplan();activatespot(map_hp16,-52.01););
+set(scene[scene_18th_hole].onstart,default_actions();map_floorplan();activatespot(map_hp18,-106.83););
+
+</action>
+
+
+
+
+
+
+
+<!-- sub_menu_panel Actions -->
+<action name="hide_all_sub_menu">
+hide_sub_menu-2_1();
+
+</action>
+
+
+
+
+
+
+
+
+<action name="show_scenes-1">
+tween(plugin[pannel_bg1].y,5);
+set(plugin[menu1].crop,'20|26|100|26');
+</action>
+
+<action name="show_scenes-2">
+tween(plugin[pannel_bg2].y,5);
+set(plugin[menu2].crop,'125|26|135|26');
+</action>
+
+
+<action name="show_scenes-3">
+tween(plugin[pannel_bg3].y,5);
+set(plugin[menu3].crop,'260|26|85|26');
+</action>
+
+
+
+
+<action name="hideall">
+tween(plugin[pannel_bg1].y,-300);
+tween(plugin[pannel_bg2].y,-500);
+tween(plugin[pannel_bg3].y,-300);
+
+set(plugin[menu1].crop,'20|0|100|26');
+set(plugin[menu2].crop,'125|0|135|26');
+set(plugin[menu3].crop,'260|0|85|26');
+
+</action>
+
+
+
+<action name="show_sub_menu-2_1">
+hide_all_sub_menu();
+set(plugin[sub_tab_2_1_1].visible,1);
+set(plugin[sub_tab_2_1_2].visible,1);
+</action>
+
+<action name="hide_sub_menu-2_1">
+set(plugin[sub_tab_2_1_1].visible,0);
+set(plugin[sub_tab_2_1_2].visible,0);
+</action>
+
+
+ <plugin name="header2" url="images/footer.png"  keep="true" X="30" Y="0" align="bottomcenter" zorder="11" handcursor="0"  /> 
+<style name="bottom" url="images/bottom.png"  keep="true" align="bottomleft" zorder="11" handcursor="1"  />  
+
+<plugin name="logo" url="images/logo.png"  keep="true" X="0" Y="40"  align="topcenter" zorder="5" handcursor="1"  onclick="openurl(http://www.imperialklubgolf.com/,_blank)" />
+
+
+<!-- social_media -->
+
+<plugin name="fb" url="images/social.png"  keep="true" X="100" Y="0"  parent="header2"  align="topright" zorder="11" handcursor="1" crop="0|0|25|26"  onclick="openurl(
+https://www.facebook.com/pages/Imperial-Golf-Club-Karawaci/118284508234079,_blank)" />
+<plugin name="tw" url="images/social.png"  keep="true" X="75" Y="0"  parent="header2"  align="topright" zorder="11" handcursor="1" crop="25|0|25|26"  onclick="openurl(https://twitter.com/intent/follow?original_referer=http://www.imperialklubgolf.com/2011/index.asp?fuseaction=Nearby&amp;screen_name=ImperialKlubGlf&amp;source=followbutton&amp;variant=2.0&amp;xd_token=ccb091c99790e,_blank)" />
+<plugin name="in" url="images/social.png"  keep="true" X="50" Y="0"  parent="header2"  align="topright" zorder="11" handcursor="1" crop="50|0|25|26"  onclick="openurl(https://instagram.com/hrd_imperialklubgolf/,_blank)" />
+<plugin name="trip" url="images/social.png"  keep="true" X="25" Y="0"  parent="header2"  align="topright" zorder="11" handcursor="1" crop="75|0|25|26"  onclick="openurl(http://www.tripadvisor.co.uk/Attraction_Review-g1493703-d4441274-Reviews-Imperial_Klub_Golf_Lippo_Karawaci-Tangerang_Banten_Province_Java.html,_blank)" />
+
+
+<!-- social_media -->
+
+
+
+    <style name="textstyle" devices="flash"
+           url="%SWFPATH%/plugins/textfield.swf" keep="true" x="5" width="170"  height="22" visible="true" 
+           borderwidth="0" children="false"  background="false" backgroundcolor="0x9c7844"
+           handcursor="1" align="topleft" selectable="false"  
+           css="p{color:#888888; font-family:Quattrocento; font-weight:normal; margin-left:10; font-size:14px;   text-align:left;}"
+           onhover="set(css,p{color:#ffffff; font-family:Quattrocento; font-weight:normal; margin-left:10; font-size:14px;   text-align:left;}"
+           onout="set(css,p{color:#888888; font-family:Quattrocento; font-weight:normal; margin-left:10; font-size:14px;   text-align:left;}"
+           />
+ 
+           
+           
+    <style name="textstyle" devices="html5"
+           url="%SWFPATH%/plugins/textfield.swf" keep="true" x="25" width="170"  height="22" visible="true" 
+           borderwidth="0" children="false"  background="false" backgroundcolor="0x9c7844"
+           handcursor="1" align="topleft" selectable="false" 
+           css="p{color:#ffffff; font-family:Myriad Pro; font-weight:normal; margin-left:10; font-size:14px;   text-align:left;}"
+           />
+
+    <style name="sub_textstyle" 
+           url="%SWFPATH%/plugins/textfield.swf" keep="true" height="25" visible="true" background="true"  backgroundcolor="0x000000"
+           borderwidth="0" children="false" roundedge="3"  backgroundalpha="0.85"  
+           handcursor="1" align="topleft" selectable="true"  vcenter="true"
+           css="p{color:#888888; font-family:Myriad Pro;  font-size:13px;  text-align:center;} "
+           onhover="set(css,p{color:#ffffff; font-family:Myriad Pro;  font-size:13px;  text-align:center;})"
+           onout="set(css,p{color:#888888; font-family:Myriad Pro;  font-size:13px;  text-align:center;})"
+            />  
+            
+            
+            
+
+ 
+<!-- <plugin name="intro" keep="true" align="bottomright" x="15" y="10" alpha="0"  url="images/intro2.png" autoalpha="true" zorder="0" handcursor="0" />  
+ 
+<plugin name="intro_cls" keep="true" align="topright" x="15" y="15"  url="skin/button.png" alpha="0" handcursor="1" parent="intro" onclick="tween(plugin[intro].alpha,0)" />
+ 
+<plugin name="intro_link" keep="true" align="topleft" x="252" y="90" width="75" url="skin/button.png" alpha="0" handcursor="1" parent="intro" onclick="loadscene(scene_frontdrive, null, MERGE,BLEND(1));tween(plugin[intro].alpha,0)" /> -->
+  
+  
+ 
+ 
+ 
+<style name="scenenames" 
+           url="%SWFPATH%/plugins/textfield.swf" keep="false"   height="25" visible="true" background="false"  backgroundcolor="0x282828"
+           borderwidth="0"  roundedge="0"  backgroundalpha="0.60" x="38" y="17"   autowidth="auto" zorder="1" 
+           handcursor="0" align="bottomleft" selectable="true"  vcenter="true"
+           css="p{color:#ffffff; font-family:Myriad Pro;  font-size:13px; margin-left:0;  text-align:center;} "           
+            />          
+            
+<plugin name="name_bg" keep="true" align="bottomleft"  url="images/name_bg.png" X="-10" Y="16" enabled="false" zorder="0" handcursor="0" />   
+
+<action name="addscenenames"> 
+set(scnma,get(scene[get(xml.scene)].title));
+txtadd(htmlnm,'[p]',get(scnma),'[/p]');
+addplugin(scnames);
+plugin[scnames].loadstyle(scenenames);  
+set(plugin[scnames].html,get(htmlnm));
+</action>  
+
+     
+
+<!-- Set             Scene Names  -->
+              
+            
+ <style name="mainareas" url="images/mainareas.png" keep="true" align="topleft" zorder="5"  />  
+  <style name="golfcourse" url="images/golfcourse.png" keep="true" align="topleft" zorder="5"  />  
+  <style name="facilities" url="images/facilities.png" keep="true" align="topleft" zorder="5"  />                
+            
+            
+<style name="panel_button" url="%SWFPATH%/images/panel_butt.png" keep="true" x="0" alpha="0" align="topleft"  onout="tween(alpha,0)"  />    
+<style name="panel_button2" url="%SWFPATH%/images/panel_butt2.png" keep="true" x="0" alpha="0" align="topleft"  onout="tween(alpha,0)"  />     
+<style name="panel_button3" url="%SWFPATH%/images/panel_butt3.png" keep="true" x="0" alpha="0" align="topleft"  onout="tween(alpha,0)"  />    
+
+
+
+<plugin name="menu1" keep="true" parent="header2"  align="topleft" url="images/buttons.png" X="20" Y="0" zorder="12" crop="20|0|105|26"
+onovercrop="20|26|105|26" ondowncrop="20|26|105|26" onover="show_scenes-1()" onout="hideall()"  onclick="show_scenes-1()" />
+
+
+
+<layer name="pannel_box1" type="container"  keep="true" align="bottomcenter" x="-160" y="18" width="150" height="140" zorder="3" maskchildren="true" handcursor="false"  >
+
+<layer name="pannel_bg1" devices="all" url="%SWFPATH%/images/panel_bg.png" y="-500" height="120" align="bottomleft"  x="0" keep="true" zorder="3" visible="1" onover="show_scenes-1()" onout="hideall()"  onclick="show_scenes-1();"  >
+
+
+<plugin name="scene1-1" style="mainareas" y="10"  parent="pannel_bg1"  html="[p]Club House Aerial[/p]" crop="0|0|160|25" onovercrop="160|0|160|25"   zorder="2"
+ onOver="show_scenes-1();" onclick="loadscene(scene_imperialgolfclubhouseaerial,null,MERGE,BLEND(1));" />    
+
+<plugin name="scene1-2" style="mainareas" y="35"  parent="pannel_bg1"  html="[p]Golf Course Aerial[/p]" crop="0|25|160|25" onovercrop="160|25|160|25"   zorder="2"
+ onOver="show_scenes-1();" onclick="loadscene(scene_imperialgolfclubcourseaerial,null,MERGE,BLEND(1));" />    
+
+<plugin name="scene1-3" style="mainareas" y="60"  parent="pannel_bg1"  html="[p]facade[/p]" crop="0|50|160|25" onovercrop="160|50|160|25"   zorder="2"
+ onOver="show_scenes-1();" onclick="loadscene(scene_facade,null,MERGE,BLEND(1));" />    
+ 
+<plugin name="scene1-4" style="mainareas" y="85"  parent="pannel_bg1"  html="[p]lobby[/p]" crop="0|75|160|25" onovercrop="160|75|160|25"   zorder="2"
+ onOver="show_scenes-1();" onclick="loadscene(scene_lobby,null,MERGE,BLEND(1));" /> 
+ 
+ 
+
+</layer>
+
+</layer>
+
+
+
+
+
+
+<!-- Accommodation -->
+
+
+
+
+
+
+<plugin name="menu2" keep="true" parent="header2"  align="topleft" edge="topleft"  url="images/buttons.png" X="300" Y="0" zorder="12" crop="125|0|135|26"
+onovercrop="125|26|135|26" ondowncrop="125|26|135|26"  onover="show_scenes-2()" onout="hideall()"  onclick="show_scenes-2()" />
+
+
+<layer name="pannel_box2" type="container"  keep="true" align="bottomcenter" x="135" y="18" width="160" height="145" zorder="3" maskchildren="true" handcursor="false"  >
+
+<layer name="pannel_bg2" devices="all" url="%SWFPATH%/images/panel_bg.png" y="-500" width="160"  height="145" align="bottomleft"  x="0" keep="true" zorder="3" visible="1" onover="show_scenes-2()" onout="hideall()"  onclick="show_scenes-2();"  >
+
+
+<plugin name="scene2-1" style="golfcourse" y="10"  parent="pannel_bg2"  html="[p]Hole 4[/p]" crop="0|0|160|25" onovercrop="160|0|160|25"   zorder="2"
+ onOver="show_scenes-2()" onclick="loadscene(scene_4th_hole,null,MERGE,BLEND(1));" /> 
+ 
+<plugin name="scene2-2" style="golfcourse" y="35"  parent="pannel_bg2"  html="[p]Hole 7[/p]" crop="0|25|160|25" onovercrop="160|25|160|25"   zorder="2"
+ onOver="show_scenes-2()" onclick="loadscene(scene_7th_hole,null,MERGE,BLEND(1));" />    
+ 
+<plugin name="scene2-3" style="golfcourse" y="60"  parent="pannel_bg2"  html="[p]Hole 14[/p]" crop="0|50|160|25" onovercrop="160|50|160|25"   zorder="2"
+ onOver="show_scenes-2()" onclick="loadscene(scene_14th_hole,null,MERGE,BLEND(1));" /> 
+ 
+<plugin name="scene2-4" style="golfcourse" y="85"  parent="pannel_bg2"  html="[p]Hole 16[/p]" crop="0|75|160|25" onovercrop="160|75|160|25"   zorder="2"
+ onOver="show_scenes-2();" onclick="loadscene(scene_16th_hole,null,MERGE,BLEND(1));" />    
+
+<plugin name="scene2-5" style="golfcourse" y="110"  parent="pannel_bg2"  html="[p]Hole 18[/p]" crop="0|100|160|25" onovercrop="160|100|160|25"   zorder="2"
+ onOver="show_scenes-2();" onclick="loadscene(scene_18th_hole,null,MERGE,BLEND(1));" />   
+ 
+
+</layer>
+
+</layer>
+
+
+
+
+<plugin name="menu3" keep="true" parent="header2"  align="topleft" edge="topleft"  url="images/buttons.png" X="180" Y="0" zorder="12" crop="260|0|85|26"
+onovercrop="260|26|85|26" ondowncrop="260|26|85|26" onover="show_scenes-3()" onout="hideall()" onclick="show_scenes-3()"  />
+
+
+<layer name="pannel_box3" type="container"  keep="true" align="bottomcenter" x="5" y="18" width="160" height="165" zorder="3" maskchildren="true" handcursor="false"  >
+
+<layer name="pannel_bg3" devices="all" url="%SWFPATH%/images/panel_bg.png" y="-500" height="165" width="160" align="bottomleft"  x="0" keep="true" zorder="3" visible="1" onover="show_scenes-3()" onout="hideall()"  onclick="show_scenes-3();"  >
+
+
+<plugin name="scene3-1" style="facilities" y="10"  parent="pannel_bg3"  html="[p]Golf View Restaurant [/p]" crop="0|0|160|25" onovercrop="160|0|160|25"   zorder="2"
+ onOver="show_scenes-3();" onclick="loadscene(scene_golfviewrestaurant,null,MERGE,BLEND(1));" />  
+ 
+<plugin name="scene3-2" style="facilities" y="35"  parent="pannel_bg3"  html="[p]Sunset Bar[/p]" crop="0|25|160|25" onovercrop="160|25|160|25"   zorder="2"
+ onOver="show_scenes-3();" onclick="loadscene(scene_sunsetbar,null,MERGE,BLEND(1));" /> 
+ 
+<!-- <plugin name="scene3-3" style="facilities" y="60"  parent="pannel_bg3"  html="[p]Pool[/p]" crop="0|50|160|25" onovercrop="160|50|160|25"   zorder="2"
+ onOver="show_scenes-3();" onclick="loadscene(,null,MERGE,BLEND(1));" />  -->
+ 
+<plugin name="scene3-4" style="facilities" y="60"  parent="pannel_bg3"  html="[p]Locker Room[/p]" crop="0|75|160|25" onovercrop="160|75|160|25"   zorder="2"
+ onOver="show_scenes-3();" onclick="loadscene(scene_lockerroom,null,MERGE,BLEND(1));" /> 
+
+<plugin name="scene3-5" style="facilities" y="85"  parent="pannel_bg3"  html="[p]Eagle Room[/p]" crop="0|100|160|25" onovercrop="160|100|160|25"   zorder="2"
+ onOver="show_scenes-3();" onclick="loadscene(scene_eagleroom,null,MERGE,BLEND(1));" /> 
+ 
+<plugin name="scene3-6" style="facilities" y="110"  parent="pannel_bg3"  html="[p]VIP Room[/p]" crop="0|125|160|25" onovercrop="160|125|160|25"   zorder="2"
+ onOver="show_scenes-3();" onclick="loadscene(scene_viproom,null,MERGE,BLEND(1));" /> 
+
+<plugin name="scene3-7" style="facilities" y="135"  parent="pannel_bg3"  html="[p]Practice Green[/p]" crop="0|150|160|25" onovercrop="160|150|160|25"   zorder="2"
+ onOver="show_scenes-3();" onclick="loadscene(scene_practicegreen,null,MERGE,BLEND(1));" /> 
+
+
+</layer>
+
+</layer>
+
+
+
+
+<!-- Dining -->
+
+
+
+
+<!-- <plugin name="booknow" keep="true" parent="header2" align="topleft" edge="topleft"  url="images/buttons.png" X="625" Y="0" zorder="12" crop="680|0|150|26"
+ onclick="openurl(http://www.oriental-residence.com/,_blank);" /> -->
+ 
+ 
+
+
+
+
+
+ 
+
+
+
+<action name="hidehp">
+     set(layer[hidehp].visible,false);
+     set(layer[showhp].visible,true);
+     
+set(hotspot[hs1].visible,false);
+set(hotspot[hs2].visible,false);
+set(hotspot[hs3].visible,false);
+</action>
+
+<action name="showhp">
+     set(layer[hidehp].visible,true);
+     set(layer[showhp].visible,false);  
+     
+set(hotspot[hs1].visible,true);
+set(hotspot[hs2].visible,true);
+set(hotspot[hs3].visible,true);   
+</action>
+
+
+
+
+
+
+</krpano>

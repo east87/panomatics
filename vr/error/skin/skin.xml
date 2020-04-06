@@ -1,0 +1,80 @@
+<krpano>
+
+
+<style name="dragable" dragging="if(pressed, sub(dx,mouse.stagex,drag_stagex); sub(dy,mouse.stagey,drag_stagey); mul(dx,dragsx); mul(dy,dragsy); add(x,drag_currentx,dx); add(y,drag_currenty,dy); delayedcall(0,dragging()););"
+ondown="copy(drag_currentx,x); copy(drag_currenty,y); copy(drag_stagex,mouse.stagex); copy(drag_stagey,mouse.stagey);  set(dragsx,+1); set(dragsy,+1); if(align==righttop,set(dragsx,-1)); if(align==right,set(dragsx,-1)); if(align==rightbottom,set(dragsx,-1);set(dragsy,-1)); if(align==bottom,set(dragsy,-1)); if(align==leftbottom,set(dragsy,-1)); dragging();"
+/>
+
+       
+   
+
+<!-- <layer name="toolbar_reset" url="%SWFPATH%/skin/button.png" align="rightbottom" visible="true" width="50" height="50" alpha="0"  x="15" y="25" keep="true" handcursor="false" onclick="set(layer[toolbar].x,10);set(layer[toolbar].y,20);" /> -->
+
+
+
+
+
+<layer name="toolbar" url="%SWFPATH%/skin/toolbar.png" scale="0.45" scalechildren="true" align="leftbottom" style="dragable"  x="30" y="50" zorder="1" keep="true">   
+
+     
+            
+<layer name="map_pointer" url="dot.png"  keep="true" handcursor="false"  zorder="0"    
+            align="center" x="0" y="0" edge="center" enabled="false"
+            />  
+            
+            
+   
+            
+<layer name="skin_btn_in" url="%SWFPATH%/skin/button.png" align="topleft" zorder="5"  x="56"  y="123" scale="0.80" alpha="0" ondown="set(fov_moveforce,-1);"  onup="set(fov_moveforce,0);" onhover="showtext(Zoom In,alttext)" />
+
+ <layer name="skin_btn_ou" url="%SWFPATH%/skin/button.png" align="topleft" zorder="5"  x="81 "  y="123" scale="0.80" alpha="0" ondown="set(fov_moveforce,+1);" onup="set(fov_moveforce,0);" onhover="showtext(Zoom Out,alttext)" />
+
+<layer name="skin_btn_lt" url="%SWFPATH%/skin/button.png" align="topleft" zorder="5"  x="29"  y="95" scale="0.80" alpha="0" ondown="set(hlookat_moveforce,-1);" onup="set(hlookat_moveforce,0);" onhover="showtext(Left,alttext)" />
+<layer name="skin_btn_rt" url="%SWFPATH%/skin/button.png" align="topleft" zorder="5" x="166"  y="95" scale="0.80"  alpha="0" ondown="set(hlookat_moveforce,+1);" onup="set(hlookat_moveforce,0);" onhover="showtext(Right,alttext)" />
+<layer name="skin_btn_up" url="%SWFPATH%/skin/button.png" align="topleft" zorder="5" x="96"  y="26" scale="0.80"  alpha="0" ondown="set(vlookat_moveforce,-1);" onup="set(vlookat_moveforce,0);" onhover="showtext(Up,alttext)" />
+<layer name="skin_btn_dn" url="%SWFPATH%/skin/button.png" align="topleft" zorder="5"  x="96"  y="165"  scale="0.80" alpha="0" ondown="set(vlookat_moveforce,+1);" onup="set(vlookat_moveforce,0);" onhover="showtext(Down,alttext)" />
+
+<layer name="skin_btn_auto" url="%SWFPATH%/skin/button.png" align="topleft" zorder="5"  x="106"  y="123" scale="0.80" alpha="0" onclick="switch(autorotate.enabled);" onhover="showtext(Autorotation On / Off,alttext)" /> 
+
+<layer name="skin_btn_fs" url="%SWFPATH%/skin/button.png" align="topleft" zorder="5" x="134"  y="123" scale="0.80" alpha="0" onclick="switch(fullscreen);" onhover="showtext(Fullscreen,alttext)" /> 
+
+
+
+</layer>  
+           
+           
+           
+<!-- <layer name="panright" url="%SWFPATH%/images/panright.png" align="centerright" zorder="90" alpha="0.8" keep="true" ondown="set(hlookat_moveforce,+1);" onup="set(hlookat_moveforce,0);"  />          
+           
+<layer name="panleft" url="%SWFPATH%/images/panleft.png" align="centerleft" zorder="90" alpha="0.8" keep="true" ondown="set(hlookat_moveforce,-1);" onup="set(hlookat_moveforce,0);"  />   --> 
+
+
+
+
+        
+            
+      
+       
+<!-- <layer name="panelimage" url="%SWFPATH%/skin/shoppanels.png" align="leftbottom"  x="10" y="10" keep="true" handcursor="false">
+<layer name="acc_butt" url="%SWFPATH%/skin/shoppanels_1.png" align="topleft" crop="5|30|60|45"  x="5" y="30" keep="true" handcursor="true" alpha="0" onover="tween(alpha,1)" onout="tween(alpha,0)" onclick="acc()" /> 
+<layer name="bar_butt" url="%SWFPATH%/skin/shoppanels_1.png" align="topleft" crop="65|30|75|45"  x="65" y="30" keep="true" handcursor="true" alpha="0" onover="tween(alpha,1)" onout="tween(alpha,0)" onclick="bar()" /> 
+ </layer> -->
+ 
+ 
+ 
+ 
+ 
+<events  onviewchange="rotatearrow();"/>
+            
+            
+   <action name="rotatearrow">
+        add(layer[map_pointer].rotate, heading, view.hlookat);
+    </action>
+
+    
+    
+            
+            
+     
+
+</krpano>

@@ -1,0 +1,396 @@
+<krpano version="1.17" title="Virtual Tour" onstart="startup();">
+
+	   <include url="skin/skin.xml" />
+    <!-- <include url="skin/loadingpercent.xml" /> -->
+    <include url="skin/loadingbar.xml" />
+    <include url="blend.xml" />
+    <include url="panel.xml" />
+    <include url="info.xml" />
+    <include url="floorplan.xml" />    
+    
+    
+
+
+
+<action name="startup">
+ global_actions();
+        if(startscene === null, copy(startscene,scene[0].name));
+        loadscene(get(startscene), null, MERGE);
+        set(heading, 65);               
+    </action>
+	
+	
+<!-- Sample Blend Script use seconds if required blend(seconds),"blend(7)" -->
+<!-- <events name="blend" onloadcomplete="blendhotspot(pano_name);blend()"/>     -->
+<!-- <events name="blend_mul3" onloadcomplete="blendhotspot_mul3(pano_name1,pano_name2);blend_mul3());"/> -->
+<!-- <events name="blend_mul4" onloadcomplete="blendhotspot_mul4(pano_name1,pano_name2,pano_name3);blend_mul4());"/> -->
+
+	
+<autorotate enabled="true"
+            waittime="5.0"
+            accel="1.0"
+            speed="3.0"
+            horizon="0.0"
+            tofov="off"
+            />
+        
+         <display fps="60"
+         details="16"
+         tessmode="-1"
+         movequality="HIGH"
+         stillquality="HIGH"
+         flash10="on"
+         movequality10="HIGH"
+         stillquality10="HIGH"
+         sharpen="12"
+         stilltime="0.25"
+         showpolys="false"
+         />	
+         
+         
+<style name="skin_hotspotstyle" url="images/hotspot.png" scale="0.40" zorder="10"  onover="tween(scale,0.45)" onout="tween(scale,0.35)"  onclick="if(linkedscene, looktohotspot(); loadscene(get(linkedscene),null,MERGE,BLEND(1)); );" onhover="showtext(get(scene[get(linkedscene)].title),alttext));" />
+<style name="skin_hotspotstyle1" url="images/hotspot.png" scale="0.40" zorder="10" onclick="if(linkedscene, looktohotspot(); loadscene(get(linkedscene),null,MERGE,BLEND(1));lookat(get(look),0,120) );" />  
+
+ <style name="multi_hotspotstyle" url="images/hotspot.png" scale="0.35" zorder="10"  />
+    
+  <textstyle name="alttext" font="Thoma" fontsize="12" bold="true" italic="false" textcolor="0xffffff" alpha="0.7" background="true" border="false" blendmode="layer" origin="cursor"  edge="bottom" backgroundcolor="0x000000" bordercolor="0xffffff" xoffset="15" yoffset="-5" showtime="0.1" fadeintime="0.1" fadetime="0.1" />   
+	
+
+    <scene name="scene_imperialgolfclubhouseaerial" title="imperialgolfclubhouseaerial" onstart="" thumburl="panos/imperialgolfclubhouseaerial.tiles/thumb.jpg" lat="" lng="" heading="">
+
+        <view hlookat="191.700" vlookat="8.421" fovtype="MFOV" fov="120.000" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+        <preview url="panos/imperialgolfclubhouseaerial.tiles/preview.jpg" />
+
+        <image>
+            <cube url="panos/imperialgolfclubhouseaerial.tiles/pano_%s.jpg" />
+            <mobile>
+                <cube url="panos/imperialgolfclubhouseaerial.tiles/mobile_%s.jpg" />
+            </mobile>
+            <mobile devices="iPad+Retina">
+                <cube url="panos/imperialgolfclubhouseaerial.tiles/retina_%s.jpg" />
+            </mobile>
+        </image>
+
+        <!-- place your scene hotspots here -->
+
+    </scene>
+
+
+
+    <scene name="scene_imperialgolfclubcourseaerial" title="imperialgolfclubcourseaerial" onstart="" thumburl="panos/imperialgolfclubcourseaerial.tiles/thumb.jpg" lat="" lng="" heading="">
+
+        <view hlookat="175.761" vlookat="17.384" fovtype="MFOV" fov="120.000" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+        <preview url="panos/imperialgolfclubcourseaerial.tiles/preview.jpg" />
+
+        <image>
+            <cube url="panos/imperialgolfclubcourseaerial.tiles/pano_%s.jpg" />
+            <mobile>
+                <cube url="panos/imperialgolfclubcourseaerial.tiles/mobile_%s.jpg" />
+            </mobile>
+            <mobile devices="iPad+Retina">
+                <cube url="panos/imperialgolfclubcourseaerial.tiles/retina_%s.jpg" />
+            </mobile>
+        </image>
+
+        <!-- place your scene hotspots here -->
+
+    </scene>
+
+
+
+
+    <scene name="scene_facade" title="Facade" onstart="default_actions();" thumburl="panos/facade.tiles/thumb.jpg" lat="" lng="" heading="">
+
+        <view hlookat="56.613" vlookat="0.437" fovtype="MFOV" fov="120.000" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+        <preview url="panos/facade.tiles/preview.jpg" />
+
+        <image>
+            <cube url="panos/facade.tiles/pano_%s.jpg" />
+            <mobile>
+                <cube url="panos/facade.tiles/mobile_%s.jpg" />
+            </mobile>
+            <mobile devices="iPad+Retina">
+                <cube url="panos/facade.tiles/retina_%s.jpg" />
+            </mobile>
+        </image>
+
+        <!-- place your scene hotspots here -->
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-7.061" atv="-1.105" linkedscene="scene_lobby" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="113.806" atv="3.559" linkedscene="scene_practicegreen" />
+
+    </scene>
+
+    <scene name="scene_lobby" title="Lobby" onstart="default_actions();" thumburl="panos/lobby.tiles/thumb.jpg" lat="" lng="" heading="">
+
+        <view hlookat="135.340" vlookat="-1.128" fovtype="MFOV" fov="120.000" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+        <preview url="panos/lobby.tiles/preview.jpg" />
+
+        <image>
+            <cube url="panos/lobby.tiles/pano_%s.jpg" />
+            <mobile>
+                <cube url="panos/lobby.tiles/mobile_%s.jpg" />
+            </mobile>
+            <mobile devices="iPad+Retina">
+                <cube url="panos/lobby.tiles/retina_%s.jpg" />
+            </mobile>
+        </image>
+
+        <!-- place your scene hotspots here -->
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-170.965" atv="1.978" linkedscene="scene_viproom" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="-140.123" atv="0.185" linkedscene="scene_golfviewrestaurant" />
+		<hotspot name="spot3" style="skin_hotspotstyle" ath="-16.873" atv="0.048" linkedscene="scene_facade" />
+		<hotspot name="spot4" style="skin_hotspotstyle" ath="77.766" atv="1.208" linkedscene="scene_lockerroom" />
+
+    </scene>
+
+	
+	<scene name="scene_4th_hole" title="4th Hole" onstart="default_actions();" thumburl="panos/4th_hole.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="-243.053" vlookat="6.055" fovtype="MFOV" fov="120.000" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/4th_hole.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/4th_hole.tiles/pano_%s.jpg" />
+			<mobile>
+				<cube url="panos/4th_hole.tiles/mobile_%s.jpg" />
+			</mobile>
+			<mobile devices="iPad+Retina">
+				<cube url="panos/4th_hole.tiles/retina_%s.jpg" />
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+
+	</scene>
+
+	<scene name="scene_7th_hole" title="7th Hole" onstart="default_actions();" thumburl="panos/7th_hole.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="16.651" vlookat="1.620" fovtype="MFOV" fov="120.000" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/7th_hole.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/7th_hole.tiles/pano_%s.jpg" />
+			<mobile>
+				<cube url="panos/7th_hole.tiles/mobile_%s.jpg" />
+			</mobile>
+			<mobile devices="iPad+Retina">
+				<cube url="panos/7th_hole.tiles/retina_%s.jpg" />
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+
+	</scene>
+
+	<scene name="scene_14th_hole" title="14th Hole" onstart="default_actions();" thumburl="panos/14th_hole.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="-184.431" vlookat="-3.718" fovtype="MFOV" fov="120.000" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/14th_hole.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/14th_hole.tiles/pano_%s.jpg" />
+			<mobile>
+				<cube url="panos/14th_hole.tiles/mobile_%s.jpg" />
+			</mobile>
+			<mobile devices="iPad+Retina">
+				<cube url="panos/14th_hole.tiles/retina_%s.jpg" />
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+
+	</scene>
+
+	<scene name="scene_16th_hole" title="16th Hole" onstart="default_actions();" thumburl="panos/16th_hole.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="22.993" vlookat="0.460" fovtype="MFOV" fov="120.000" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/16th_hole.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/16th_hole.tiles/pano_%s.jpg" />
+			<mobile>
+				<cube url="panos/16th_hole.tiles/mobile_%s.jpg" />
+			</mobile>
+			<mobile devices="iPad+Retina">
+				<cube url="panos/16th_hole.tiles/retina_%s.jpg" />
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+
+	</scene>
+
+	<scene name="scene_18th_hole" title="18th Hole" onstart="default_actions();" thumburl="panos/18th_hole.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="54.711" vlookat="1.376" fovtype="MFOV" fov="120.000" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/18th_hole.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/18th_hole.tiles/pano_%s.jpg" />
+			<mobile>
+				<cube url="panos/18th_hole.tiles/mobile_%s.jpg" />
+			</mobile>
+			<mobile devices="iPad+Retina">
+				<cube url="panos/18th_hole.tiles/retina_%s.jpg" />
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+
+	</scene>
+
+
+
+	<scene name="scene_golfviewrestaurant" title="Golf View Restaurant" onstart="default_actions();" thumburl="panos/golfviewrestaurant.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="132.553" vlookat="4.849" fovtype="MFOV" fov="120.000" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/golfviewrestaurant.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/golfviewrestaurant.tiles/pano_%s.jpg" />
+			<mobile>
+				<cube url="panos/golfviewrestaurant.tiles/mobile_%s.jpg" />
+			</mobile>
+			<mobile devices="iPad+Retina">
+				<cube url="panos/golfviewrestaurant.tiles/retina_%s.jpg" />
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="94.188" atv="-0.492" linkedscene="scene_eagleroom" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="122.104" atv="-0.615" linkedscene="scene_lobby" />
+		<hotspot name="spot3" style="skin_hotspotstyle" ath="171.958" atv="2.060" linkedscene="scene_sunsetbar" />
+
+	</scene>
+
+
+
+	<scene name="scene_lockerroom" title="Locker Room" onstart="default_actions();" thumburl="panos/lockerroom.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="110.563" vlookat="0.188" fovtype="MFOV" fov="120.000" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/lockerroom.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/lockerroom.tiles/pano_%s.jpg" />
+			<mobile>
+				<cube url="panos/lockerroom.tiles/mobile_%s.jpg" />
+			</mobile>
+			<mobile devices="iPad+Retina">
+				<cube url="panos/lockerroom.tiles/retina_%s.jpg" />
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="12.908" atv="5.747" linkedscene="scene_lobby" />
+
+	</scene>
+
+	<scene name="scene_practicegreen" title="Practice Green" onstart="default_actions();" thumburl="panos/practicegreen.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="-26.061" vlookat="1.157" fovtype="MFOV" fov="120.000" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/practicegreen.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/practicegreen.tiles/pano_%s.jpg" />
+			<mobile>
+				<cube url="panos/practicegreen.tiles/mobile_%s.jpg" />
+			</mobile>
+			<mobile devices="iPad+Retina">
+				<cube url="panos/practicegreen.tiles/retina_%s.jpg" />
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-115.221" atv="-0.820" linkedscene="scene_facade" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="-86.074" atv="-1.152" linkedscene="scene_lobby" />
+
+	</scene>
+
+	<scene name="scene_sunsetbar" title="Sunset Bar" onstart="default_actions();" thumburl="panos/sunsetbar.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="76.485" vlookat="1.348" fovtype="MFOV" fov="120.000" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/sunsetbar.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/sunsetbar.tiles/pano_%s.jpg" />
+			<mobile>
+				<cube url="panos/sunsetbar.tiles/mobile_%s.jpg" />
+			</mobile>
+			<mobile devices="iPad+Retina">
+				<cube url="panos/sunsetbar.tiles/retina_%s.jpg" />
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-29.109" atv="1.750" linkedscene="scene_golfviewrestaurant" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="123.047" atv="2.921" linkedscene="scene_viproom" />
+		<hotspot name="spot3" style="skin_hotspotstyle" ath="-152.936" atv="3.534" linkedscene="scene_18th_hole" />
+
+	</scene>
+	
+	
+	   <scene name="scene_eagleroom" title="Eagle Room" onstart="default_actions();" thumburl="panos/eagleroom.tiles/thumb.jpg" lat="" lng="" heading="">
+
+        <view hlookat="-60" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+        <preview url="panos/eagleroom.tiles/preview.jpg" />
+
+        <image>
+            <cube url="panos/eagleroom.tiles/pano_%s.jpg" />
+            <mobile>
+                <cube url="panos/eagleroom.tiles/mobile_%s.jpg" />
+            </mobile>
+            <mobile devices="iPad+Retina">
+                <cube url="panos/eagleroom.tiles/retina_%s.jpg" />
+            </mobile>
+        </image>
+
+        <!-- place your scene hotspots here -->
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="133.018" atv="2.756" linkedscene="scene_golfviewrestaurant" />
+
+    </scene>
+
+	<scene name="scene_viproom" title="VIP Room" onstart="default_actions();" thumburl="panos/viproom.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="116.947" vlookat="5.138" fovtype="MFOV" fov="120.000" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/viproom.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/viproom.tiles/pano_%s.jpg" />
+			<mobile>
+				<cube url="panos/viproom.tiles/mobile_%s.jpg" />
+			</mobile>
+			<mobile devices="iPad+Retina">
+				<cube url="panos/viproom.tiles/retina_%s.jpg" />
+			</mobile>
+		</image>
+
+		<events name="blend" onloadcomplete="blendhotspot(viproom_01);blend()"/>
+		<hotspot name="spot7" style="skin_hotspotstyle" ath="163.671" atv="-2.028" linkedscene="scene_sunsetbar" /> 
+
+	</scene>
+
+	
+
+	
+	
+<contextmenu versioninfo="false">       
+<item caption="Panomatics.com"   onclick="openurl(http://www.panomatics.com/,_blank);"  />   
+<item name="fsc" caption="FULLSCREEN" />        
+</contextmenu>
+
+</krpano>

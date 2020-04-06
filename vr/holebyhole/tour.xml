@@ -1,0 +1,1005 @@
+<krpano version="1.19" title="Virtual Tour" onstart="startup();">
+
+<!-- <include url="panel.xml" /> -->
+<!-- 
+  	 
+<plugin name="editor" url="plugins/editor.swf" keep="true" /> -->
+
+<action name="startup">
+ 		global_actions();
+ 		default_actions();
+        if(startscene === null, copy(startscene,scene[0].name));
+        loadscene(get(startscene), null, MERGE);
+        set(heading, 65);               
+    </action>
+    
+	<include url="plugins/showtext.xml" />
+
+
+<!-- Sample Blend Script use seconds if required blend(seconds),"blend(7)" -->
+<!-- <events name="blend" onloadcomplete="blendhotspot(pano_name);blend()"/>     -->
+<!-- <events name="blend_mul3" onloadcomplete="blendhotspot_mul3(pano_name1,pano_name2);blend_mul3());"/> -->
+<!-- <events name="blend_mul4" onloadcomplete="blendhotspot_mul4(pano_name1,pano_name2,pano_name3);blend_mul4());"/> -->
+
+	
+<autorotate enabled="true"
+            waittime="5.0"
+            accel="1.0"
+            speed="3.0"
+            horizon="0.0"
+            tofov="off"
+            />
+        
+         <display fps="60"
+         details="16"
+         tessmode="-1"
+         movequality="HIGH"
+         stillquality="HIGH"
+         flash10="on"
+         movequality10="HIGH"
+         stillquality10="HIGH"
+         sharpen="12"
+         stilltime="0.25"
+         showpolys="false"
+         />	
+         
+         
+	<style name="video"  distorted="true"         
+         url.flash="plugins/videoplayer.swf"
+         url.html5="plugins/videoplayer.js"
+         enabled="false"        
+         handcursor="false" 
+         pausedonstart="false"
+         volume="1" alpha="0"
+         edge="lefttop"
+         directionalsound="false"
+         rangefalloff="1.0"
+         outofrangevolume="0.0"        
+         loop="true"        
+         onclick="togglepause()"
+         /> 
+         
+         
+             <plugin name="orientation" 
+        url="plugins/orientation.js" 
+        keep="true"
+        devices="HTML5"
+        onorientationchange="updateorientation();"
+        />
+        
+
+    
+      <events name="orientation" keep="true" devices="html5"
+onloadcomplete="updateorientation();"
+            />
+
+
+<action name="updateorientation">
+
+ if(isHTML5,
+
+if(plugin[orientation].portrait == 1,
+set(layer[rotate_device1].alpha, 1.0); 
+delayedcall(3.0, tween(layer[rotate_device1].alpha, 0.0, 1.0); );
+,
+tween(layer[rotate_device1].alpha, 0.0, 0.0); );
+ 
+ 
+   );
+
+      );
+
+          
+      
+        
+  
+           
+  
+</action>
+
+    <layer name="rotate_device1" keep="true" devices="Mobile|ipad|iphone"
+           url="skin/rotate_device.png" scale="0.5"
+           align="top" edge="center" y="28%"
+           alpha="1" autoalpha="1"
+           enabled="false"
+           />
+
+
+
+
+  
+        
+           <action name="orientation">
+              
+                    tween(layer[webvr_rotate_to_landscape_request].alpha, 0.0, 0.0);
+                  ,
+                    delayedcall(3.0, tween(layer[webvr_rotate_to_landscape_request].alpha, 0.0, 1.0); );
+                  );
+              );
+          ,
+            set(lastaspect, 0);
+          );
+    </action>
+         
+         
+         
+         
+         <style name="cube-hs-video" keep="false" distorted="true" width="1000" height="1000" zorder="9" enabled="false" alpha="1" />  
+         
+         
+<style name="skin_hotspotstyle" url="images/hotspot.png" scale="0.40" zorder="10"  onover="tween(scale,0.45)" onout="tween(scale,0.35)"  onclick="if(linkedscene, looktohotspot(); loadscene(get(linkedscene),null,MERGE,BLEND(1)); );" distorted="true" onhover="showtext(get(scene[get(linkedscene)].title),alttext));" />
+<style name="skin_hotspotstyle2" url="images/hotspot2.png" scale="0.45" distorted="true" zorder="10" alpha="0.9" onclick="if(linkedscene, lookto(get(ath),0,60); loadscene(get(linkedscene),null,MERGE,BLEND(1)); );" onhover="showtext(get(scene[get(linkedscene)].title),alttext));" />
+
+ <style name="multi_hotspotstyle" url="images/hotspot.png" scale="0.35" zorder="10"  />
+    
+  <textstyle name="alttext" font="Thoma" fontsize="12" bold="true" italic="false" textcolor="0xffffff" alpha="0.7" background="true" border="false" blendmode="layer" origin="cursor"  edge="bottom" backgroundcolor="0x000000" bordercolor="0xffffff" xoffset="15" yoffset="-5" showtime="0.1" fadeintime="0.1" fadetime="0.1" />   
+
+<!-- Hole 1 -->
+
+	<scene name="scene_1teeingoff" title="Hole 1 - Teeing Off" onstart="default_actions()" thumburl="panos/1teeingoff.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/1teeingoff.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/1teeingoff.tiles/pano_%s.jpg" />
+		</image>
+		
+		<hotspot name="teeingoff1" style="video"         
+         ath="0.000" atv="0.000"  width="500" height="458.3333333333333"
+         oy="-250"
+         ox="-333.3333333333333"   
+         videourl="videos/hole1_teeingoff.flv|videos/hole1_teeingoff.mp4"         
+             />    
+             
+         <events name="playvid2" onloadcomplete="set(hotspot[teeingoff1].alpha,1);hotspot[teeingoff1].play();"/>
+		<hotspot name="spot2" style="skin_hotspotstyle2" ath="8.219842" atv="7.954031" distorted="true" rx="-55.4" ry="3.675" rz="3.096264" linkedscene="scene_1fairway" /> 
+
+	</scene>
+	
+	<scene name="scene_1fairway" title="Hole 1 - Second Shot" onstart="default_actions()" thumburl="panos/1fairway.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="180.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/1fairway.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/1fairway.tiles/pano_%s.jpg" />
+		</image>
+		
+		<hotspot name="fairway1" style="video"         
+         ath="180.000" atv="0.000"  width="666.6666666666667" height="375"
+         oy="-208.3333333333333"
+         ox="-416.6666666666667"   
+         videourl="videos/hole1_fairway.flv|videos/hole1_fairway.mp4"         
+             />    
+             
+         <events name="playvid" onloadcomplete="set(hotspot[fairway1].alpha,1);hotspot[fairway1].play();"/>
+		<hotspot name="spot2" style="skin_hotspotstyle2" ath="200.788288" atv="8.998558" distorted="true" rx="-53.75" ry="0.75" rz="4.380959" linkedscene="scene_2teeingoff" />
+		<hotspot name="spot3" style="skin_hotspotstyle2" ath="-14.949742" atv="8.686554" distorted="true" rx="-45.75" ry="8.25" rz="3.45479" linkedscene="scene_1teeingoff" /> 
+
+	</scene>
+
+<!-- Hole 2 -->
+
+	<scene name="scene_2teeingoff" title="Hole 2 - Teeing Off" onstart="default_actions()" thumburl="panos/2teeingoff.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/2teeingoff.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/2teeingoff.tiles/pano_%s.jpg" />
+		</image>
+
+		<hotspot name="teeingoff2" style="video"         
+         ath="0.000" atv="0.000"  width="750" height="500"
+         oy="-250"
+         ox="-375"   
+         videourl="videos/hole2_teeingoff.flv|videos/hole2_teeingoff.mp4"         
+             />    
+             
+         <events name="playvid2" onloadcomplete="set(hotspot[teeingoff2].alpha,1);hotspot[teeingoff2].play();"/>
+		<hotspot name="spot2" style="skin_hotspotstyle2" ath="20.39006" atv="9.43789" distorted="true" rx="-53.0" ry="2.5" rz="5.870091" linkedscene="scene_2fairway" />
+		<hotspot name="spot3" style="skin_hotspotstyle2" ath="227.518379" atv="9.961943" distorted="true" rx="-52.5" ry="-2.75" rz="-0.001228" linkedscene="scene_1fairway" /> 
+         
+	</scene>
+	
+	<scene name="scene_2fairway" title="Hole 2 - Second Shot" onstart="default_actions()" thumburl="panos/2fairway.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/2fairway.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/2fairway.tiles/pano_%s.jpg" />
+		</image>
+
+		<hotspot name="fairway2" style="video"         
+         ath="0.000" atv="0.000"  width="583.3333333333333" height="416.6666666666667"
+         oy="-208.3333333333333"
+         ox="-375"   
+         videourl="videos/hole2_fairway.flv|videos/hole2_fairway.mp4"         
+             />    
+             
+        <events name="playvid" onloadcomplete="set(hotspot[fairway2].alpha,1);hotspot[fairway2].play();"/>
+		<hotspot name="spot2" style="skin_hotspotstyle2" ath="8.304624"   atv="6.878461" distorted="true" rx="-52.25" ry="-1.5" rz="-0.032773" linkedscene="scene_3teeingoff" />
+		<hotspot name="spot3" style="skin_hotspotstyle2" ath="188.206976" atv="6.15833"  distorted="true" rx="-50.5"  ry="1.0"  rz="0.004866"  linkedscene="scene_2teeingoff" />
+
+	</scene>
+
+<!-- Hole 3 -->
+
+	<scene name="scene_3teeingoff" title="Hole 3 - Teeing Off" onstart="default_actions()" thumburl="panos/3teeingoff.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/3teeingoff.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/3teeingoff.tiles/pano_%s.jpg" />
+		</image>
+
+		<hotspot name="teeingoff3" style="video"         
+         ath="0.000" atv="0.000"  width="791.6666666666667" height="625.8333333333333"
+         oy="-333.3333333333333"
+         ox="-375"   
+         videourl="videos/hole3_teeingoff.flv|videos/hole3_teeingoff.mp4"         
+             />    
+             
+        <events name="playvid2" onloadcomplete="set(hotspot[teeingoff3].alpha,1);hotspot[teeingoff3].play();"/>
+		<hotspot name="spot2" style="skin_hotspotstyle2" ath="172.406255" atv="4.831785" distorted="true" rx="-31.0" ry="0" rz="-0.00848" linkedscene="scene_2fairway" />
+		<hotspot name="spot3" style="skin_hotspotstyle2" ath="24.173846" atv="8.798013" distorted="true" rx="-55.25" ry="0" rz="0.092517" linkedscene="scene_3fairway" /> 
+         
+	</scene>
+	
+	<scene name="scene_3fairway" title="Hole 3 - Second Shot" onstart="default_actions()" thumburl="panos/3fairway.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/3fairway.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/3fairway.tiles/pano_%s.jpg" />
+		</image>
+
+		<hotspot name="fairway3" style="video"         
+         ath="0.000" atv="0.000"  width="875.8333333333333" height="543.3333333333333"
+         oy="-333.3333333333333"
+         ox="-458.3333333333333"   
+         videourl="videos/hole3_fairway.flv|videos/hole3_fairway.mp4"         
+             />    
+             
+        <events name="playvid" onloadcomplete="set(hotspot[fairway3].alpha,1);hotspot[fairway3].play();"/>
+		<hotspot name="spot2" style="skin_hotspotstyle2" ath="185.711566" atv="5.766428" distorted="true" rx="-54.25" ry="13.0" rz="13.763307" linkedscene="scene_3teeingoff" />
+		<hotspot name="spot3" style="skin_hotspotstyle2" ath="17.968" atv="7.868" distorted="true" rx="-50.75" ry="0.25" rz="0" linkedscene="scene_4teeingoff" /> 
+         
+	</scene>
+
+<!-- Hole 4 -->
+
+	<scene name="scene_4teeingoff" title="Hole 4 - Teeing Off" onstart="default_actions()" thumburl="panos/4teeingoff.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/4teeingoff.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/4teeingoff.tiles/pano_%s.jpg" />
+		</image>
+
+		<hotspot name="teeingoff4" style="video"         
+         ath="0.000" atv="0.000"  width="833.3333333333333" height="583.3333333333333"
+         oy="-333.3333333333333"
+         ox="-416.6666666666667"   
+         videourl="videos/hole4_teeingoff.flv|videos/hole4_teeingoff.mp4"         
+             />    
+             
+        <events name="playvid2" onloadcomplete="set(hotspot[teeingoff4].alpha,1);hotspot[teeingoff4].play();"/>
+		<hotspot name="spot2" style="skin_hotspotstyle2" ath="17.911365" atv="6.447392" distorted="true" rx="-50.0" ry="8.75" rz="8.453917" linkedscene="scene_4fairway" />
+		<hotspot name="spot3" style="skin_hotspotstyle2" ath="-158.668" atv="12.103" distorted="true" rx="-14.5" ry="-3.0" rz="0" linkedscene="scene_3fairway" /> 
+         
+	</scene>
+
+	<scene name="scene_4fairway" title="Hole 4 - Second Shot" onstart="default_actions()" thumburl="panos/4fairway.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/4fairway.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/4fairway.tiles/pano_%s.jpg" />
+		</image>
+
+		<hotspot name="fairway4" style="video"         
+         ath="0.000" atv="0.000"  width="834.1666666666667" height="541.6666666666667"
+         oy="-291.6666666666667"
+         ox="-416.6666666666667"   
+         videourl="videos/hole4_fairway.flv|videos/hole4_fairway.mp4"         
+             />    
+             
+        <events name="playvid" onloadcomplete="set(hotspot[fairway4].alpha,1);hotspot[fairway4].play();"/>
+		<hotspot name="spot2" style="skin_hotspotstyle2" ath="22.249" atv="6.672" distorted="true" rx="-53.5" ry="-2.25" rz="0" linkedscene="scene_05teeingoff" />
+		<hotspot name="spot3" style="skin_hotspotstyle2" ath="147.969" atv="13.361" distorted="true" rx="-46.0" ry="0.25" rz="0" linkedscene="scene_4teeingoff" /> 
+         
+	</scene>
+
+<!-- Hole 5 -->
+
+	<scene name="scene_05teeingoff" title="Hole 5 - Teeing Off" onstart="default_actions()" thumburl="panos/05teeingoff.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/05teeingoff.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/05teeingoff.tiles/pano_%s.jpg" />
+		</image>
+
+		<hotspot name="teeingoff5" style="video"         
+         ath="0.000" atv="0.000"  width="750.8333333333333" height="541.6666666666667"
+         oy="-291.6666666666667"
+         ox="-416.6666666666667"   
+         videourl="videos/hole5_teeingoff.flv|videos/hole5_teeingoff.mp4"         
+             />    
+             
+        <events name="playvid2" onloadcomplete="set(hotspot[teeingoff5].alpha,1);hotspot[teeingoff5].play();"/>
+		<hotspot name="spot2" style="skin_hotspotstyle2" ath="-155.348" atv="9.304" distorted="true" rx="-27.0" ry="0.5" rz="0" linkedscene="scene_4fairway" />
+		<hotspot name="spot3" style="skin_hotspotstyle2" ath="15.526" atv="10.71" distorted="true" rx="-54.0" ry="-1.25" rz="0" linkedscene="scene_teeingoff" /> 
+         
+	</scene>
+
+<!-- Hole 6 -->
+
+	<scene name="scene_teeingoff" title="Hole 6 - Teeing Off" onstart="default_actions()" thumburl="panos/teeingoff.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/teeingoff.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/teeingoff.tiles/pano_%s.jpg" />
+		</image>
+
+		<hotspot name="teeingoff6" style="video"         
+         ath="0.000" atv="0.000"  width="666.6666666666667" height="629.1666666666667"
+         oy="-333.3333333333333"
+         ox="-416.6666666666667"   
+         videourl="videos/hole6_teeingoff.flv|videos/hole6_teeingoff.mp4"         
+             />    
+             
+        <events name="playvid2" onloadcomplete="set(hotspot[teeingoff6].alpha,1);hotspot[teeingoff6].play();"/>
+		<hotspot name="spot2" style="skin_hotspotstyle2" ath="4.705731" atv="6.630692" distorted="true" rx="-53.5" ry="-1.0" rz="-0.003358" linkedscene="scene_6fairway1" />
+		<hotspot name="spot3" style="skin_hotspotstyle2" ath="175.743779" atv="12.265646" distorted="true" rx="-45.0" ry="-0.25" rz="0.128847" linkedscene="scene_05teeingoff" /> 
+         
+	</scene>
+	
+	<scene name="scene_6fairway1" title="Hole 6 - Second Shot" onstart="default_actions()" thumburl="panos/6fairway1.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/6fairway1.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/6fairway1.tiles/pano_%s.jpg" />
+		</image>
+
+		<hotspot name="fairway6_1" style="video"         
+         ath="0.000" atv="0.000"  width="625" height="583.3333333333333"
+         oy="-291.6666666666667"
+         ox="-375"   
+         videourl="videos/hole6_1_fairway.flv|videos/hole6_1_fairway.mp4"         
+             />    
+             
+        <events name="playvid" onloadcomplete="set(hotspot[fairway6_1].alpha,1);hotspot[fairway6_1].play();"/>
+		<hotspot name="spot2" style="skin_hotspotstyle2" ath="5.094562" atv="4.02061" distorted="true" rx="-53.25" ry="1.5" rz="0.156865" linkedscene="scene_6fairway2" />
+		<hotspot name="spot3" style="skin_hotspotstyle2" ath="185.329841" atv="7.783698" distorted="true" rx="-51.5" ry="-1.5" rz="0.002526" linkedscene="scene_teeingoff" /> 
+         
+	</scene>
+
+	<scene name="scene_6fairway2" title="Hole 6 - third Shot" onstart="default_actions()" thumburl="panos/6fairway2.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/6fairway2.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/6fairway2.tiles/pano_%s.jpg" />
+		</image>
+
+		<hotspot name="fairway6_2" style="video"         
+         ath="0.000" atv="0.000"  width="712.5" height="625"
+         oy="-333.3333333333333"
+         ox="-458.3333333333333"   
+         videourl="videos/hole6_2_fairway.flv|videos/hole6_2_fairway.mp4"         
+             />    
+             
+        <events name="playvid" onloadcomplete="set(hotspot[fairway6_2].alpha,1);hotspot[fairway6_2].play();"/>
+		<hotspot name="spot2" style="skin_hotspotstyle2" ath="0.436043" atv="4.352374" distorted="true" rx="-52.5" ry="-0.25" rz="0.000399" linkedscene="scene_7teeingoff" />
+		<hotspot name="spot3" style="skin_hotspotstyle2" ath="175.969" atv="6.08" distorted="true" rx="-50.5" ry="-1.0" rz="0" linkedscene="scene_6fairway1" /> 
+         
+	</scene>
+	
+<!-- Hole 7 -->
+
+	<scene name="scene_7teeingoff" title="Hole 7 - Teeing Off" onstart="default_actions()" thumburl="panos/7teeingoff.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/7teeingoff.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/7teeingoff.tiles/pano_%s.jpg" />
+		</image>
+
+		<hotspot name="teeingoff7" style="video"         
+         ath="0.000" atv="0.000"  width="750" height="667.5"
+         oy="-333.3333333333333"
+         ox="-375"   
+         videourl="videos/hole7_teeingoff.flv|videos/hole7_teeingoff.mp4"         
+             />    
+             
+        <events name="playvid2" onloadcomplete="set(hotspot[teeingoff7].alpha,1);hotspot[teeingoff7].play();"/>
+		<hotspot name="spot2" style="skin_hotspotstyle2" ath="20.301316" atv="5.439369" distorted="true" rx="-32.25" ry="2.5" rz="1.780514" linkedscene="scene_8teeingoff" />
+		<hotspot name="spot3" style="skin_hotspotstyle2" ath="182.837857" atv="17.680558" distorted="true" rx="-29.5" ry="-2.25" rz="-0.253289" linkedscene="scene_6fairway2" /> 
+         
+	</scene>
+
+<!-- Hole 8 -->
+
+	<scene name="scene_8teeingoff" title="Hole 8 - Teeing Off" onstart="default_actions()" thumburl="panos/8teeingoff.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/8teeingoff.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/8teeingoff.tiles/pano_%s.jpg" />
+		</image>
+
+		<hotspot name="teeingoff8" style="video"         
+         ath="0.000" atv="0.000"  width="833.3333333333333" height="584.1666666666667"
+         oy="-375"
+         ox="-416.6666666666667"   
+         videourl="videos/hole8_teeingoff.flv|videos/hole8_teeingoff.mp4"         
+             />    
+             
+        <events name="playvid2" onloadcomplete="set(hotspot[teeingoff8].alpha,1);hotspot[teeingoff8].play();"/>
+		<hotspot name="spot2" style="skin_hotspotstyle2" ath="12.561877" atv="7.342258" distorted="true" rx="-58.25" ry="2.5" rz="-0.026557" linkedscene="scene_8fairway" />
+		<hotspot name="spot3" style="skin_hotspotstyle2" ath="198.593921" atv="14.429282" distorted="true" rx="-49.0" ry="-4.0" rz="-0.012399" linkedscene="scene_7teeingoff" />
+         
+	</scene>
+	
+	<scene name="scene_8fairway" title="Hole 8 - Second Shot" onstart="default_actions()" thumburl="panos/8fairway.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/8fairway.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/8fairway.tiles/pano_%s.jpg" />
+		</image>
+
+		<hotspot name="fairway8" style="video"         
+         ath="0.000" atv="0.000"  width="625" height="541.6666666666667"
+         oy="-333.3333333333333"
+         ox="-333.3333333333333"   
+         videourl="videos/hole8_fairway.flv|videos/hole8_fairway.mp4"         
+             />    
+             
+        <events name="playvid" onloadcomplete="set(hotspot[fairway8].alpha,1);hotspot[fairway8].play();"/>
+		<hotspot name="spot2" style="skin_hotspotstyle2" ath="9.212461" atv="4.992737" distorted="true" rx="-55.5" ry="-5.5" rz="0.068984" linkedscene="scene_9teeingoff" />
+		<hotspot name="spot3" style="skin_hotspotstyle2" ath="190.922895" atv="9.216909" distorted="true" rx="-53.0" ry="4.75" rz="0.043284" linkedscene="scene_8teeingoff" />
+         
+	</scene>
+
+<!-- Hole 9 -->
+	
+	<scene name="scene_9teeingoff" title="Hole 9 - Teeing off" onstart="default_actions()" thumburl="panos/9teeingoff.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/9teeingoff.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/9teeingoff.tiles/pano_%s.jpg" />
+		</image>
+
+		<hotspot name="teeingoff9" style="video"         
+         ath="0.000" atv="0.000"  width="833.3333333333333" height="666.6666666666667"
+         oy="-375"
+         ox="-458.3333333333333"   
+         videourl="videos/hole9_teeingoff.flv|videos/hole9_teeingoff.mp4"         
+             />    
+             
+        <events name="playvid2" onloadcomplete="set(hotspot[teeingoff9].alpha,1);hotspot[teeingoff9].play();"/>
+		<hotspot name="spot2" style="skin_hotspotstyle2" ath="9.360128" atv="6.708824" distorted="true" rx="-57.5" ry="2.25" rz="-0.049358" linkedscene="scene_9fairway1" />
+		<hotspot name="spot3" style="skin_hotspotstyle2" ath="228.273" atv="5.485" distorted="true" rx="-51.75" ry="-25.75" rz="-27.25" linkedscene="scene_8fairway" />
+         
+	</scene>
+	
+	<scene name="scene_9fairway1" title="Hole 9 - Second Shot" onstart="default_actions()" thumburl="panos/9fairway1.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/9fairway1.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/9fairway1.tiles/pano_%s.jpg" />
+		</image>
+
+		<hotspot name="fairway9_1" style="video"         
+         ath="0.000" atv="0.000"  width="666.6666666666667" height="587.5"
+         oy="-375"
+         ox="-458.3333333333333"   
+         videourl="videos/hole9_1_fairway.flv|videos/hole9_1_fairway.mp4"         
+             />    
+             
+        <events name="playvid" onloadcomplete="set(hotspot[fairway9_1].alpha,1);hotspot[fairway9_1].play();"/>
+		<hotspot name="spot2" style="skin_hotspotstyle2" ath="0.0" atv="1.307" distorted="true" rx="-58.75" ry="-3.0" rz="0" linkedscene="scene_9fairway2" />
+		<hotspot name="spot3" style="skin_hotspotstyle2" ath="168.881" atv="5.109" distorted="true" rx="-55.25" ry="6.25" rz="0" linkedscene="scene_9teeingoff" /> 
+         
+	</scene>
+
+	<scene name="scene_9fairway2" title="Hole 9 - Third Shot" onstart="default_actions()" thumburl="panos/9fairway2.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/9fairway2.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/9fairway2.tiles/pano_%s.jpg" />
+		</image>
+
+		<hotspot name="fairway9_2" style="video"         
+         ath="0.000" atv="0.000"  width="916.6666666666667" height="629.1666666666667"
+         oy="-333.3333333333333"
+         ox="-458.3333333333333"   
+         videourl="videos/hole9_2_fairway.flv|videos/hole9_2_fairway.mp4"         
+             />    
+             
+        <events name="playvid" onloadcomplete="set(hotspot[fairway9_2].alpha,1);hotspot[fairway9_2].play();"/>
+		<hotspot name="spot2" style="skin_hotspotstyle2" ath="1.598004" atv="4.061701" distorted="true" rx="-48.0" ry="-2.0" rz="0.045174" linkedscene="scene_10teeingoff" />
+		<hotspot name="spot3" style="skin_hotspotstyle2" ath="178.622343" atv="5.793262" distorted="true" rx="-52.0" ry="3.0" rz="-3.703591" linkedscene="scene_9fairway1" />
+         
+	</scene>
+
+<!-- Hole 10 -->
+
+	<scene name="scene_10teeingoff" title="Hole 10 - Teeing Off" onstart="default_actions()" thumburl="panos/10teeingoff.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/10teeingoff.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/10teeingoff.tiles/pano_%s.jpg" />
+		</image>
+
+		<hotspot name="teeingoff10" style="video"         
+         ath="0.000" atv="0.000"  width="794.1666666666667" height="666.6666666666667"
+         oy="-375"
+         ox="-458.3333333333333"   
+         videourl="videos/hole10_teeingoff.flv|videos/hole10_teeingoff.mp4"         
+             />    
+             
+        <events name="playvid2" onloadcomplete="set(hotspot[teeingoff10].alpha,1);hotspot[teeingoff10].play();"/>
+		<hotspot name="spot2" style="skin_hotspotstyle2" ath="18.899" atv="4.117" distorted="true" rx="-53.0" ry="1.25" rz="0" linkedscene="scene_10fairway" />
+		<hotspot name="spot3" style="skin_hotspotstyle2" ath="165.076" atv="9.164" distorted="true" rx="-55.5" ry="2.25" rz="0" linkedscene="scene_9fairway2" /> 
+         
+	</scene>
+	
+	<scene name="scene_10fairway" title="Hole 10 - Second Shot" onstart="default_actions()" thumburl="panos/10fairway.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/10fairway.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/10fairway.tiles/pano_%s.jpg" />
+		</image>
+
+		<hotspot name="fairway10" style="video"         
+         ath="0.000" atv="0.000"  width="708.3333333333333" height="500"
+         oy="-250"
+         ox="-458.3333333333333"   
+         videourl="videos/hole10_fairway.flv|videos/hole10_fairway.mp4"         
+             />    
+             
+        <events name="playvid" onloadcomplete="set(hotspot[fairway10].alpha,1);hotspot[fairway10].play();"/>
+		<hotspot name="spot2" style="skin_hotspotstyle2" ath="11.747" atv="4.543" distorted="true" rx="-55.5" ry="2.5" rz="0" linkedscene="scene_11teeingoff" />
+		<hotspot name="spot3" style="skin_hotspotstyle2" ath="182.23688" atv="3.582761" distorted="true" rx="-60.25" ry="3.25" rz="0.023014" linkedscene="scene_10teeingoff" /> 
+         
+	</scene>
+
+<!-- Hole 11 -->
+
+	<scene name="scene_11teeingoff" title="Hole 11 - Teeing Off" onstart="default_actions()" thumburl="panos/11teeingoff.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/11teeingoff.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/11teeingoff.tiles/pano_%s.jpg" />
+		</image>
+
+		<hotspot name="teeingoff11" style="video"         
+         ath="0.000" atv="0.000"  width="834.1666666666667" height="625"
+         oy="-333.3333333333333"
+         ox="-416.6666666666667"   
+         videourl="videos/hole11_teeingoff.flv|videos/hole11_teeingoff.mp4"         
+             />    
+             
+        <events name="playvid2" onloadcomplete="set(hotspot[teeingoff11].alpha,1);hotspot[teeingoff11].play();"/>
+		<hotspot name="spot2" style="skin_hotspotstyle2" ath="24.655" atv="6.052" distorted="true" rx="-53.25" ry="2.75" rz="0" linkedscene="scene_11fairway1" />
+		<hotspot name="spot3" style="skin_hotspotstyle2" ath="157.410907" atv="12.780319" distorted="true" rx="-47.5" ry="-2.0" rz="0.07103" linkedscene="scene_10fairway" /> 
+         
+	</scene>
+	
+	<scene name="scene_11fairway1" title="Hole 11 - Second Shot" onstart="default_actions()" thumburl="panos/11fairway1.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/11fairway1.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/11fairway1.tiles/pano_%s.jpg" />
+		</image>
+
+		<hotspot name="fairway11_1" style="video"         
+         ath="0.000" atv="0.000"  width="716.6666666666667" height="583.3333333333333"
+         oy="-333.3333333333333"
+         ox="-458.3333333333333"   
+         videourl="videos/hole11_1_fairway.flv|videos/hole11_1_fairway.mp4"         
+             />    
+             
+        <events name="playvid" onloadcomplete="set(hotspot[fairway11_1].alpha,1);hotspot[fairway11_1].play();"/>
+		<hotspot name="spot2" style="skin_hotspotstyle2" ath="1.718939" atv="7.935576" distorted="true" rx="-56.25" ry="3.5" rz="-0.070068" linkedscene="scene_11fairway2" />
+		<hotspot name="spot3" style="skin_hotspotstyle2" ath="-177.718" atv="9.765" distorted="true" rx="-48.75" ry="-0.25" rz="0" linkedscene="scene_11teeingoff" /> 
+         
+	</scene>
+
+	<scene name="scene_11fairway2" title="Hole 11 - Third Shot" onstart="default_actions()" thumburl="panos/11fairway2.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/11fairway2.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/11fairway2.tiles/pano_%s.jpg" />
+		</image>
+
+		<hotspot name="fairway11_2" style="video"         
+         ath="0.000" atv="0.000"  width="754.1666666666667" height="583.3333333333333"
+         oy="-333.3333333333333"
+         ox="-458.3333333333333"   
+         videourl="videos/hole11_2_fairway.flv|videos/hole11_2_fairway.mp4"         
+             />    
+             
+        <events name="playvid" onloadcomplete="set(hotspot[fairway11_2].alpha,1);hotspot[fairway11_2].play();"/>
+		<hotspot name="spot2" style="skin_hotspotstyle2" ath="0.145425" atv="5.587187" distorted="true" rx="-48.5" ry="-4.75" rz="-0.029891" linkedscene="scene_12teeingoff" />
+		<hotspot name="spot3" style="skin_hotspotstyle2" ath="179.943483" atv="4.958662" distorted="true" rx="-51.25" ry="-1.5" rz="-0.003178" linkedscene="scene_11fairway1" /> 
+         
+	</scene>
+
+<!-- Hole 12 -->
+
+	<scene name="scene_12teeingoff" title="Hole 12 - Teeing Off" onstart="default_actions()" thumburl="panos/12teeingoff.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/12teeingoff.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/12teeingoff.tiles/pano_%s.jpg" />
+		</image>
+
+		<hotspot name="teeingoff12" style="video"         
+         ath="0.000" atv="0.000"  width="834.1666666666667" height="665.8333333333333"
+         oy="-375"
+         ox="-458.3333333333333"   
+         videourl="videos/hole12_teeingoff.flv|videos/hole12_teeingoff.mp4"         
+             />    
+             
+        <events name="playvid2" onloadcomplete="set(hotspot[teeingoff12].alpha,1);hotspot[teeingoff12].play();"/>
+		<hotspot name="spot2" style="skin_hotspotstyle2" ath="179.76" atv="4.092" distorted="true" rx="-40.75" ry="-2.0" rz="0" linkedscene="scene_11fairway2" />
+		<hotspot name="spot3" style="skin_hotspotstyle2" ath="9.293759" atv="6.453388" distorted="true" rx="-57.0" ry="-2.5" rz="0.130213" linkedscene="scene_12fairway" /> 
+         
+	</scene>
+	
+	<scene name="scene_12fairway" title="Hole 12 - Second Shot" onstart="default_actions()" thumburl="panos/12fairway.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/12fairway.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/12fairway.tiles/pano_%s.jpg" />
+		</image>
+
+		<hotspot name="fairway12" style="video"         
+         ath="0.000" atv="0.000"  width="859.1666666666667" height="709.1666666666667"
+         oy="-375"
+         ox="-483.3333333333333"   
+         videourl="videos/hole12_fairway.flv|videos/hole12_fairway.mp4"         
+             />    
+             
+        <events name="playvid" onloadcomplete="set(hotspot[fairway12].alpha,1);hotspot[fairway12].play();"/>
+		<hotspot name="spot2" style="skin_hotspotstyle2" ath="1.740528" atv="5.931398" distorted="true" rx="-57.5" ry="-1.5" rz="-0.051735" linkedscene="scene_13teeingoff" />
+		<hotspot name="spot3" style="skin_hotspotstyle2" ath="181.542296" atv="7.603324" distorted="true" rx="-52.25" ry="1.75" rz="-0.177343" linkedscene="scene_12teeingoff" /> 
+         
+	</scene>
+	
+<!-- Hole 13 -->
+
+	<scene name="scene_13teeingoff" title="Hole 13 - Teeing Off" onstart="default_actions()" thumburl="panos/13teeingoff.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/13teeingoff.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/13teeingoff.tiles/pano_%s.jpg" />
+		</image>
+
+		<hotspot name="teeingoff13" style="video"         
+         ath="0.000" atv="0.000"  width="875" height="666.6666666666667"
+         oy="-377"
+         ox="-416.6666666666667"   
+         videourl="videos/hole13_teeingoff.flv|videos/hole13_teeingoff.mp4"         
+             />    
+             
+        <events name="playvid2" onloadcomplete="set(hotspot[teeingoff13].alpha,1);hotspot[teeingoff13].play();"/>
+		<hotspot name="spot2" style="skin_hotspotstyle2" ath="35.692724" atv="5.277558" distorted="true" rx="-46.25" ry="1.5" rz="-0.049441" linkedscene="scene_13fairway" />
+		<hotspot name="spot3" style="skin_hotspotstyle2" ath="174.893" atv="9.694" distorted="true" rx="-48.75" ry="0.75" rz="0" linkedscene="scene_12fairway" /> 
+         
+	</scene>
+	
+	<scene name="scene_13fairway" title="Hole 13 - Second Shot" onstart="default_actions()" thumburl="panos/13fairway.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/13fairway.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/13fairway.tiles/pano_%s.jpg" />
+		</image>
+
+		<hotspot name="fairway13" style="video"         
+         ath="0.000" atv="0.000"  width="651.6666666666667" height="625"
+         oy="-333.3333333333333"
+         ox="-483.3333333333333"   
+         videourl="videos/hole13_fairway.flv|videos/hole13_fairway.mp4"         
+             />    
+             
+        <events name="playvid" onloadcomplete="set(hotspot[fairway13].alpha,1);hotspot[fairway13].play();"/>
+		<hotspot name="spot2" style="skin_hotspotstyle2" ath="0.276" atv="4.893" distorted="true" rx="-54.25" ry="1.75" rz="0" linkedscene="scene_imperialgolfhole14" />
+		<hotspot name="spot3" style="skin_hotspotstyle2" ath="160.267" atv="9.035" distorted="true" rx="-49.75" ry="-1.75" rz="0" linkedscene="scene_13teeingoff" /> 
+         
+	</scene>
+
+<!-- Imaperial Gold Hole 14 -->
+
+	<scene name="scene_imperialgolfhole14" title="Hole 14 - Teeing Off" onstart="default_actions()" thumburl="panos/imperialgolfhole14.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/imperialgolfhole14.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/imperialgolfhole14.tiles/pano_%s.jpg" />
+		</image>
+
+		<hotspot name="hole14" style="video"         
+         ath="0.000" atv="0.000"  width="916.6666666666667" height="625"
+         oy="-375"
+         ox="-458.3333333333333"   
+         videourl="videos/hole14.flv|videos/hole14.mp4"         
+             />    
+             
+        <events name="playvid2" onloadcomplete="set(hotspot[hole14].alpha,1);hotspot[hole14].play();"/>
+		<hotspot name="spot2" style="skin_hotspotstyle2" ath="10.947351" atv="2.993661" distorted="true" rx="-38.25" ry="-2.75" rz="0.080009" linkedscene="scene_15_teeing_off" />
+		<hotspot name="spot3" style="skin_hotspotstyle2" ath="149.782085" atv="5.622" distorted="true" rx="-45.5" ry="1.75" rz="-17.709881" linkedscene="scene_13fairway" /> 
+         
+	</scene>
+	
+<!-- Hole 15 -->
+
+	<scene name="scene_15_teeing_off" title="Hole 15 - Teeing Off" onstart="default_actions()" thumburl="panos/15_teeing_off.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/15_teeing_off.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/15_teeing_off.tiles/pano_%s.jpg" />
+		</image>
+
+		<hotspot name="teeingoff15" style="video"         
+         ath="0.000" atv="0.000"  width="829.1666666666667" height="666.6666666666667"
+         oy="-375"
+         ox="-416.6666666666667"   
+         videourl="videos/hole15_teeingoff.flv|videos/hole15_teeingoff.mp4"         
+             />    
+             
+        <events name="playvid2" onloadcomplete="set(hotspot[teeingoff15].alpha,1);hotspot[teeingoff15].play();"/>
+		<hotspot name="spot2" style="skin_hotspotstyle2" ath="19.596847" atv="6.320988" distorted="true" rx="-40.5" ry="-0.25" rz="-0.036307" linkedscene="scene_15fairway" />
+		<hotspot name="spot3" style="skin_hotspotstyle2" ath="199.940662" atv="7.081065" distorted="true" rx="-23.0" ry="0.25" rz="0.035386" linkedscene="scene_imperialgolfhole14" /> 
+         
+	</scene>
+	
+	<scene name="scene_15fairway" title="Hole 15 - Second Shot" onstart="default_actions()" thumburl="panos/15fairway.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/15fairway.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/15fairway.tiles/pano_%s.jpg" />
+		</image>
+		
+		<hotspot name="fairway15" style="video"         
+         ath="0.000" atv="0.000"  width="750.8333333333333" height="625.8333333333333"
+         oy="-333.3333333333333"
+         ox="-458.3333333333333"   
+         videourl="videos/hole15_fairway.flv|videos/hole15_fairway.mp4"         
+             />    
+             
+        <events name="playvid" onloadcomplete="set(hotspot[fairway15].alpha,1);hotspot[fairway15].play();"/>
+		<hotspot name="spot2" style="skin_hotspotstyle2" ath="7.224412" atv="8.864687" distorted="true" rx="-51.5" ry="-4.25" rz="-7.0545" linkedscene="scene_16_teeing_off" />
+		<hotspot name="spot3" style="skin_hotspotstyle2" ath="176.090425" atv="8.836222" distorted="true" rx="-57.0" ry="-0.75" rz="-0.040874" linkedscene="scene_15_teeing_off" /> 
+         
+	</scene>
+	
+<!-- Hole 16 -->
+
+	<scene name="scene_16_teeing_off" title="Hole 16 - Teeing Off" onstart="default_actions()" thumburl="panos/16_teeing_off.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/16_teeing_off.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/16_teeing_off.tiles/pano_%s.jpg" />
+		</image>
+
+		<hotspot name="teeingoff16" style="video"         
+         ath="0.000" atv="0.000"  width="841.6666666666667" height="712.5"
+         oy="-375"
+         ox="-458.3333333333333"   
+         videourl="videos/hole16_teeingoff.flv|videos/hole16_teeingoff.mp4"         
+             />    
+             
+        <events name="playvid2" onloadcomplete="set(hotspot[teeingoff16].alpha,1);hotspot[teeingoff16].play();"/>
+		<hotspot name="spot2" style="skin_hotspotstyle2" ath="19.095698" atv="7.233479" distorted="true" rx="-44.25" ry="2.75" rz="-0.045487" linkedscene="scene_17teeingoff" />
+		<hotspot name="spot3" style="skin_hotspotstyle2" ath="220.66938" atv="8.599756" distorted="true" rx="-43.0" ry="-10.75" rz="-7.250072" linkedscene="scene_15fairway" />
+		 
+         
+	</scene>
+
+<!-- Hole 17 -->
+
+	<scene name="scene_17teeingoff" title="Hole 17 - Teeing Off" onstart="default_actions()" thumburl="panos/17teeingoff.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/17teeingoff.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/17teeingoff.tiles/pano_%s.jpg" />
+		</image>
+
+		<hotspot name="teeingoff17" style="video"         
+         ath="0.000" atv="0.000"  width="916.6666666666667" height="916.6666666666667"
+         oy="-458.3333333333333"
+         ox="-458.3333333333333"   
+         videourl="videos/hole17_teeingoff.flv|videos/hole17_teeingoff.mp4"         
+             />    
+             
+        <events name="playvid2" onloadcomplete="set(hotspot[teeingoff17].alpha,1);hotspot[teeingoff17].play();"/>
+		<hotspot name="spot2" style="skin_hotspotstyle2" ath="21.697375" atv="6.947672" distorted="true" rx="-41.5" ry="1.25" rz="0.016471" linkedscene="scene_17fairway" />
+		<hotspot name="spot3" style="skin_hotspotstyle2" ath="168.231" atv="8.814" distorted="true" rx="-41.75" ry="14.5" rz="-22.25" linkedscene="scene_16_teeing_off" />
+         
+	</scene>
+	
+	<scene name="scene_17fairway" title="Hole 17 - Second Shot" onstart="default_actions()" thumburl="panos/17fairway.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/17fairway.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/17fairway.tiles/pano_%s.jpg" />
+		</image>
+
+		<hotspot name="fairway17" style="video"         
+         ath="0.000" atv="0.000"  width="916.6666666666667" height="712.5"
+         oy="-375"
+         ox="-458.3333333333333"   
+         videourl="videos/hole17_fairway.flv|videos/hole17_fairway.mp4"         
+             />    
+             
+        <events name="playvid" onloadcomplete="set(hotspot[fairway17].alpha,1);hotspot[fairway17].play();"/>
+		<hotspot name="spot2" style="skin_hotspotstyle2" ath="11.657364" atv="5.663305" distorted="true" rx="-35.25" ry="7.25" rz="0.046063" linkedscene="scene_18_teeingoff" />
+		<hotspot name="spot3" style="skin_hotspotstyle2" ath="185.032301" atv="7.869126" distorted="true" rx="-43.25" ry="2.0" rz="-0.094674" linkedscene="scene_17teeingoff" />
+         
+	</scene>
+	
+<!-- Hole 18 -->
+
+	<scene name="scene_18_teeingoff" title="Hole 18 - Teeing Off" onstart="default_actions()" thumburl="panos/18_teeingoff.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/18_teeingoff.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/18_teeingoff.tiles/pano_%s.jpg" />
+		</image>
+
+		<hotspot name="teeingoff18" style="video"         
+         ath="0.000" atv="0.000"  width="917.5" height="750"
+         oy="-375"
+         ox="-458.3333333333333"   
+         videourl="videos/hole18_teeingoff.flv|videos/hole18_teeingoff.mp4"         
+             />    
+             
+        <events name="playvid2" onloadcomplete="set(hotspot[teeingoff18].alpha,1);hotspot[teeingoff18].play();"/>
+		<hotspot name="spot2" style="skin_hotspotstyle2" ath="14.377051" atv="5.324921" distorted="true" rx="-54.25" ry="4.0" rz="0.075466" linkedscene="scene_18fairway1" />
+		<hotspot name="spot3" style="skin_hotspotstyle2" ath="-155.412" atv="13.697" distorted="true" rx="-52.0" ry="0.75" rz="0" linkedscene="scene_17fairway" /> 
+         
+	</scene>
+	
+	<scene name="scene_18fairway1" title="Hole 18 - Second Shot" onstart="default_actions()" thumburl="panos/18fairway1.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/18fairway1.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/18fairway1.tiles/pano_%s.jpg" />
+		</image>
+
+		<hotspot name="fairway18_1" style="video"         
+         ath="0.000" atv="0.000"  width="916.6666666666667" height="712.5"
+         oy="-375"
+         ox="-458.3333333333333"   
+         videourl="videos/hole18_1_fairway.flv|videos/hole18_1_fairway.mp4"         
+             />    
+             
+        <events name="playvid" onloadcomplete="set(hotspot[fairway18_1].alpha,1);hotspot[fairway18_1].play();"/>
+		<hotspot name="spot2" style="skin_hotspotstyle2" ath="7.032" atv="8.277" distorted="true" rx="-52.75" ry="0.25" rz="0" linkedscene="scene_18_fairway2" />
+		<hotspot name="spot3" style="skin_hotspotstyle2" ath="-152.182" atv="4.203" distorted="true" rx="-55.75" ry="2.25" rz="0" linkedscene="scene_18_teeingoff" /> 
+         
+	</scene>
+	
+	<scene name="scene_18_fairway2" title="Hole 18 - Third Shot" onstart="default_actions()" thumburl="panos/18_fairway2.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/18_fairway2.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/18_fairway2.tiles/pano_%s.jpg" />
+		</image>
+
+		<hotspot name="fairway18_2" style="video"         
+         ath="0.000" atv="0.000"  width="912.5" height="795.8333333333333"
+         oy="-458.3333333333333"
+         ox="-458.3333333333333"   
+         videourl="videos/hole18_2_fairway.flv|videos/hole18_2_fairway.mp4"         
+             />    
+             
+        <events name="playvid" onloadcomplete="set(hotspot[fairway18_2].alpha,1);hotspot[fairway18_2].play();"/>
+		<hotspot name="spot2" style="skin_hotspotstyle2" ath="-156.769" atv="8.378" distorted="true" rx="-44.5" ry="-4.75" rz="0" linkedscene="scene_18fairway1" /> 
+         
+	</scene>
+	
+<contextmenu versioninfo="false">       
+<item caption="Panomatics.com"   onclick="openurl(http://www.panomatics.com/,_blank);"  />   
+<item name="fsc" caption="FULLSCREEN" />        
+</contextmenu>
+
+</krpano>

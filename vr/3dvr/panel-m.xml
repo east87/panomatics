@@ -1,0 +1,158 @@
+<krpano>
+
+
+<action name="default_actions">
+hide_all_sub_menu();
+hideallfloorplans();
+stoptween();
+hideallinfos();
+reset_all_video();
+</action>
+<!-- addscenenames(); -->
+
+
+<events onmousedown="hideall();"  />
+        
+
+
+
+<action name="global_actions">
+set(scene[scene_4th_hole].onstart,default_actions();map_floorplan();activatespot(map_hp4,-186.82););
+set(scene[scene_7th_hole].onstart,default_actions();map_floorplan();activatespot(map_hp7,0););
+set(scene[scene_14th_hole].onstart,default_actions();map_floorplan();activatespot(map_hp14,0););
+set(scene[scene_16th_hole].onstart,default_actions();map_floorplan();activatespot(map_hp16,-52.01););
+set(scene[scene_18th_hole].onstart,default_actions();map_floorplan();activatespot(map_hp18,-106.83););
+
+</action>
+
+
+
+
+
+
+
+<!-- sub_menu_panel Actions -->
+<action name="hide_all_sub_menu">
+hide_sub_menu-2_1();
+
+</action>
+
+
+
+
+
+
+
+
+<action name="show_scenes-1">
+tween(plugin[pannel_bg1].y,5);
+set(plugin[menu1].crop,'20|26|100|26');
+</action>
+
+<action name="show_scenes-2">
+tween(plugin[pannel_bg2].y,5);
+set(plugin[menu2].crop,'125|26|135|26');
+</action>
+
+
+<action name="show_scenes-3">
+tween(plugin[pannel_bg3].y,5);
+set(plugin[menu3].crop,'260|26|85|26');
+</action>
+
+
+
+
+<action name="hideall">
+tween(plugin[pannel_bg1].y,-300);
+tween(plugin[pannel_bg2].y,-500);
+tween(plugin[pannel_bg3].y,-300);
+
+set(plugin[menu1].crop,'20|0|100|26');
+set(plugin[menu2].crop,'125|0|135|26');
+set(plugin[menu3].crop,'260|0|85|26');
+
+</action>
+
+
+
+<action name="show_sub_menu-2_1">
+hide_all_sub_menu();
+set(plugin[sub_tab_2_1_1].visible,1);
+set(plugin[sub_tab_2_1_2].visible,1);
+</action>
+
+<action name="hide_sub_menu-2_1">
+set(plugin[sub_tab_2_1_1].visible,0);
+set(plugin[sub_tab_2_1_2].visible,0);
+</action>
+
+
+
+
+
+    <style name="textstyle" devices="flash"
+           url="%SWFPATH%/plugins/textfield.swf" keep="true" x="5" width="170"  height="22" visible="true" 
+           borderwidth="0" children="false"  background="false" backgroundcolor="0x9c7844"
+           handcursor="1" align="topleft" selectable="false"  
+           css="p{color:#888888; font-family:Quattrocento; font-weight:normal; margin-left:10; font-size:14px;   text-align:left;}"
+           onhover="set(css,p{color:#ffffff; font-family:Quattrocento; font-weight:normal; margin-left:10; font-size:14px;   text-align:left;}"
+           onout="set(css,p{color:#888888; font-family:Quattrocento; font-weight:normal; margin-left:10; font-size:14px;   text-align:left;}"
+           />
+ 
+           
+           
+    <style name="textstyle" devices="html5"
+           url="%SWFPATH%/plugins/textfield.swf" keep="true" x="25" width="170"  height="22" visible="true" 
+           borderwidth="0" children="false"  background="false" backgroundcolor="0x9c7844"
+           handcursor="1" align="topleft" selectable="false" 
+           css="p{color:#ffffff; font-family:Myriad Pro; font-weight:normal; margin-left:10; font-size:14px;   text-align:left;}"
+           />
+
+    <style name="sub_textstyle" 
+           url="%SWFPATH%/plugins/textfield.swf" keep="true" height="25" visible="true" background="true"  backgroundcolor="0x000000"
+           borderwidth="0" children="false" roundedge="3"  backgroundalpha="0.85"  
+           handcursor="1" align="topleft" selectable="true"  vcenter="true"
+           css="p{color:#888888; font-family:Myriad Pro;  font-size:13px;  text-align:center;} "
+           onhover="set(css,p{color:#ffffff; font-family:Myriad Pro;  font-size:13px;  text-align:center;})"
+           onout="set(css,p{color:#888888; font-family:Myriad Pro;  font-size:13px;  text-align:center;})"
+            />  
+            
+            
+            
+ <style name="mainareas" url="images/mainareas.png" keep="true" align="topleft" zorder="5"  />  
+  <style name="golfcourse" url="images/golfcourse.png" keep="true" align="topleft" zorder="5"  />  
+  <style name="facilities" url="images/facilities.png" keep="true" align="topleft" zorder="5"  />                
+            
+            
+<style name="panel_button" url="%SWFPATH%/images/panel_butt.png" keep="true" x="0" alpha="0" align="topleft"  onout="tween(alpha,0)"  />    
+<style name="panel_button2" url="%SWFPATH%/images/panel_butt2.png" keep="true" x="0" alpha="0" align="topleft"  onout="tween(alpha,0)"  />     
+<style name="panel_button3" url="%SWFPATH%/images/panel_butt3.png" keep="true" x="0" alpha="0" align="topleft"  onout="tween(alpha,0)"  />    
+
+
+
+
+<action name="hidehp">
+     set(layer[hidehp].visible,false);
+     set(layer[showhp].visible,true);
+     
+set(hotspot[hs1].visible,false);
+set(hotspot[hs2].visible,false);
+set(hotspot[hs3].visible,false);
+</action>
+
+<action name="showhp">
+     set(layer[hidehp].visible,true);
+     set(layer[showhp].visible,false);  
+     
+set(hotspot[hs1].visible,true);
+set(hotspot[hs2].visible,true);
+set(hotspot[hs3].visible,true);   
+</action>
+
+
+
+
+
+
+</krpano>

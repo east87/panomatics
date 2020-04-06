@@ -1,0 +1,60 @@
+<krpano version="1.16" title="Virtual Tour" onstart="startup();">
+
+    
+     <autorotate enabled="true"
+            waittime="5.0"
+            accel="1.0"
+            speed="3.0"
+            horizon="0.0"
+            tofov="off"
+            />
+        
+         <display fps="60"
+         details="16"
+         tessmode="-1"
+         movequality="HIGH"
+         stillquality="HIGH"
+         flash10="on"
+         movequality10="HIGH"
+         stillquality10="HIGH"
+         sharpen="12"
+         stilltime="0.25"
+         showpolys="false"
+         />
+
+	
+
+	<action name="startup">
+		if(startscene === null, copy(startscene,scene[0].name));
+		loadscene(get(startscene), null, MERGE);
+	</action>
+
+	
+	<scene name="scene_facade" title="facade" onstart="" thumburl="../facade.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/facade.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/facade.tiles/pano_%s.jpg" />
+			<mobile>
+				<cube url="panos/facade.tiles/mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+
+	</scene>
+	
+	 
+	
+	
+<contextmenu>
+<item caption="share this panorama" onclick="openurl(http://www.panomatics.com/tools/?THUMBNAILURL=http%3A%2F%2Findonesiain360.com%2Fvirtualtours%2Fimperialklubgolf,_blank);"/>
+       
+<item caption="Panomatics.com"   onclick="openurl(http://www.panomatics.com/,_blank)"  />   
+<item caption="FULLSCREEN" />    
+</contextmenu>
+
+</krpano>

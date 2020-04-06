@@ -1,0 +1,68 @@
+<krpano>
+
+<!-- 
+Note:
+Info Enable / Desable code placed on floorplan.xml 
+-->
+
+
+
+
+<layer name="info" url="images/info.png"  keep="true" align="centercenter" zorder2="1"  zorder="9" x="0"  y="-2000" handcursor="true" visible="true" onclick="hideinfo()" />
+
+           
+<layer name="infobutton" keep="true" url="images/infobutton_ecard.png" crop="0|0|200|37" align="centerright" X="-160" Y="-19" zorder="12" onclick="showinfo()" onover="tween(layer[infobutton].x,0);" onout="tween(layer[infobutton].x,-160);"   />
+
+<!-- <layer name="info_close" parent="info" url="skin/close.png" zorder="2" x="2" y="2" align="bottomright" keep="true" onclick="hideinfo()" /> -->
+
+<action name="showinfo">
+tween(layer[infobutton].x,-200);
+set(layer[infobutton].onout,tween(layer[infobutton].x,-200));
+tween(layer[info].y,0);
+
+</action>
+
+
+
+<action name="hideinfo">
+set(layer[infobutton].onout,tween(layer[infobutton].x,-160));
+tween(layer[infobutton].x,-160);
+tween(layer[info].y,-2000);
+
+</action>
+
+
+
+
+<layer name="amap" url="images/showfloorplan.png"  x="10"   keep="true" onclick="show_coursemap();"  align="centerright" X="-157" Y="-69" onover="tween(layer[amap].x,0);" onout="tween(layer[amap].x,-157);"/>
+
+
+
+
+<layer name="coursemap_bg" url="%SWFPATH%/skin/contol_button.png"  width="110%" height="110%" bgcolor="0x000000" keep="true" zorder="99" alpha="0.8" align="center" handcursor="false" visible="false" onclick="hide_coursemap()"/>
+
+<layer name="coursemap" url="images/coursemap.jpg" zorder="100" width="prop" height="98%" x="-2500" y="0" align="centercenter" keep="true"  onclick="hide_coursemap()" >
+<layer name="coursemap_close" url="skin/close.png" zorder="2" x="7" y="5" align="bottomright" keep="true" onclick="hide_coursemap()" />
+</layer>
+
+
+
+<action name="show_coursemap">
+tween(layer[coursemap].x,0);
+set(layer[p_road].onclick,hide_coursemap());
+set(layer[coursemap_bg].visible,true);
+</action>
+
+<action name="hide_coursemap">
+tween(layer[coursemap].x,-2500);
+set(layer[p_road].onclick,hidealltabs();show_coursemap());
+set(layer[coursemap_bg].visible,false);
+</action>
+
+
+		
+		
+
+
+
+</krpano>

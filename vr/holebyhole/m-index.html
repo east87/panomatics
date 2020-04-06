@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta charset='utf-8'> 
+<head>
+<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+
+<!-- META ===================================================== --> 
+    <title>Imperial Klub Golf - Hole By Hole</title> 
+    <meta name="description" content="ADD DESCRIPTION HERE"> 
+    <meta name="keywords" content="ADD KEYWORDS HERE"> 
+
+<!-- shadowbox ===================================================== --> 
+<!--<link rel="stylesheet" type="text/css" href="shadow_box/shadowbox.css">
+<script type="text/javascript" src="shadow_box/shadowbox.js"></script>-->
+<!--<script type="text/javascript">
+Shadowbox.init({
+    handleOversize: "drag",
+    modal: true
+	 skipSetup: true
+});
+</script>-->
+<!-- shadowbox ===================================================== --> 
+
+
+<!-- CSS ====================================================== --> 
+	 <link rel="stylesheet" href="html_content/responsive_template/css/stylesheet.css">
+	<link rel="stylesheet" href="html_content/responsive_template/css/font-quattrocento.min.css">
+
+	<style>
+		@-ms-viewport { width: device-width; }
+		@media only screen and (min-device-width: 800px) { html { overflow:hidden; } }
+		html { height:100%; }
+		body { height:100%; overflow:auto; margin:0; padding:0; font-family:Arial, Helvetica, sans-serif; font-size:16px; color:#FFFFFF; background-color:#000000; position:relative; }
+	</style>
+
+</head>
+<body>
+	<div class="main-nav" >
+
+    <ul>
+
+        <li><a href="#">Front Nine</a>
+            <ul>
+               <li><a href="#" class="closeonscene" onClick="loadscene('scene_1teeingoff');" >Hole 1</a></li>              
+               <li><a href="#" class="closeonscene" onClick="loadscene('scene_2teeingoff');" >Hole 2</a></li>              
+               <li><a href="#" class="closeonscene" onClick="loadscene('scene_3teeingoff');" >Hole 3</a></li>              
+               <li><a href="#" class="closeonscene" onClick="loadscene('scene_4teeingoff');" >Hole 4</a></li>              
+               <li><a href="#" class="closeonscene" onClick="loadscene('scene_05teeingoff');" >Hole 5</a></li>  
+               <li><a href="#" class="closeonscene" onClick="loadscene('scene_teeingoff');" >Hole 6</a></li>
+               <li><a href="#" class="closeonscene" onClick="loadscene('scene_7teeingoff');" >Hole 7</a></li>
+               <li><a href="#" class="closeonscene" onClick="loadscene('scene_8teeingoff');" >Hole 8</a></li>       
+               <li><a href="#" class="closeonscene" onClick="loadscene('scene_9teeingoff');" >Hole 9</a></li>    
+            </ul>
+        </li>
+        
+         <li><a href="#">Back Nine</a>
+            <ul>
+               <li><a href="#" class="closeonscene" onClick="loadscene('scene_10teeingoff');" >Hole 10</a></li>              
+               <li><a href="#" class="closeonscene" onClick="loadscene('scene_11teeingoff');" >Hole 11</a></li>              
+               <li><a href="#" class="closeonscene" onClick="loadscene('scene_12teeingoff');" >Hole 12</a></li>              
+               <li><a href="#" class="closeonscene" onClick="loadscene('scene_13teeingoff');" >Hole 13</a></li>              
+               <li><a href="#" class="closeonscene" onClick="loadscene('scene_imperialgolfhole14');" >Hole 14</a></li>  
+               <li><a href="#" class="closeonscene" onClick="loadscene('scene_15_teeing_off');" >Hole 15</a></li>
+               <li><a href="#" class="closeonscene" onClick="loadscene('scene_16_teeing_off');" >Hole 16</a></li>
+               <li><a href="#" class="closeonscene" onClick="loadscene('scene_17teeingoff');" >Hole 17</a></li>       
+               <li><a href="#" class="closeonscene" onClick="loadscene('scene_18_teeingoff');" >Hole 18</a></li>    
+            </ul>
+        </li>
+        
+        
+     
+        
+</div>
+
+<div class="content">
+    
+    
+<div id="bgclor_logo">
+</div>    
+<div id="logo">
+<img src="images/logo_m.png" width="200" height="40">
+</div>
+
+    
+<div id="pano" style="width:100%; height:100%; position:fixed;">
+  <noscript><table style="width:100%;height:100%;"><tr style="valign:middle;"><td><div style="text-align:center;">ERROR:<br/><br/>Javascript not activated<br/><br/></div></td></tr></table></noscript></div>    
+</div>
+
+<!-- JS ======================================================= --> 
+<script type="text/javascript" src="html_content/responsive_template/js/jquery-1.8.3.min.js" ></script>
+<script type="text/javascript" src="html_content/responsive_template/js/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="html_content/responsive_template/js/corefunctions.js"></script>
+<script type="text/javascript" src="html_content/responsive_template/js/responsivetables.min.js"></script>
+<script type="text/javascript">
+	$(window).load( function() {
+		$(document).responsiveTables();
+	});
+</script>
+
+<script src="tour.js"></script>
+<script>
+embedpano({swf:"tour.swf", xml:"tour-m.xml", target:"pano", html5:"prefer", wmode:"opaque" , passQueryParameters:true});
+
+	function krpano() 
+	{
+		return document.getElementById("krpanoSWFObject");
+	}
+    
+	function loadscene(panoname)
+	{
+		krpano().call("loadscene(" + panoname + ", null, MERGE, BLEND(1));");
+	}
+
+</script>
+
+
+
+<link rel="stylesheet" href="html_content/colorbox/colorbox.css" />
+<script src="html_content/colorbox/jquery.colorbox.js"></script>	
+
+<!-- add media queries for IE 8 -->
+<!--[if lte IE 8]>
+<script type="text/javascript" src="js/respond.min.js"></script>
+<![endif]-->
+</body>
+</html>

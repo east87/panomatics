@@ -1,0 +1,36 @@
+﻿<krpano version="1.19" title="Virtual Tour">
+
+	
+<include url="panel.xml" /> 
+<include url="tour.xml" /> 
+<include url="info.xml" />
+<include url="floorplan.xml" /> 
+
+
+
+<plugin name="clipboard" url="plugins/clipboard.swf"  keep="true"  /> 
+
+
+
+
+	<plugin name="copylinkbutton" url="copylinkbutton.png"  keep="true" X="-65" Y="100" scale="0.7"  align="righttop" zorder="11" handcursor="1" onclick="set_clipboard()"  /> 
+	
+	
+<action name="set_clipboard" >
+	
+jsget(link, 'location.href'); 	
+set(scn,get(scene[get(xml.scene)].index));
+
+txtreplace(link1,link,url.html,index.html);
+
+txtadd(urllink,get(scene[get(xml.scene)].title),' - ' , get(link1),'?startscene=',get(scn) );
+	
+set(plugin[clipboard].text,get(urllink)); 
+	  
+</action>
+
+
+
+
+
+</krpano>

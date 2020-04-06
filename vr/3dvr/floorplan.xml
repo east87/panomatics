@@ -1,0 +1,107 @@
+<krpano>
+
+<style name="floorplan_spot" url="floorplan/hotspot-floorplan.png" keep="true" align="lefttop" edge="center" zorder="2" onclick="if(linkedscene, loadscene(get(linkedscene),null,MERGE,BLEND(1)); );" />
+
+
+
+
+
+
+<plugin name="map" url="floorplan/map.png"  keep="true" align="topright" zorder2="1" zorder="9" x="-1000"  y="40" alpha="1" handcursor="false" visible="true" scalechildren="true"/>
+<plugin name="floorplan_close1" url="floorplan/floorplan_close.png" parent="map"  keep="true" align="topright" zorder="21" x="0"  y="0" handcursor="true" onclick="hidefloorplan();" />
+ 
+<plugin name="map_hp4" style="floorplan_spot" parent="map" x="344" y="119" onhover="showtext(Hole 4,alttext);" linkedscene="scene_4th_hole" /> 
+
+<plugin name="map_hp7" style="floorplan_spot" parent="map" x="364" y="335" onhover="showtext(Hole 7,alttext);" linkedscene="scene_7th_hole" /> 
+
+<plugin name="map_hp14" style="floorplan_spot" parent="map" x="233" y="112" onhover="showtext(Hole 14,alttext);" linkedscene="scene_14th_hole" /> 
+
+<plugin name="map_hp16" style="floorplan_spot" parent="map" x="248" y="217" onhover="showtext(Hole 16,alttext);" linkedscene="scene_16th_hole" /> 
+
+<plugin name="map_hp18" style="floorplan_spot" parent="map" x="252" y="380" onhover="showtext(Hole 18,alttext);" linkedscene="scene_18th_hole" /> 
+
+
+
+
+<plugin name="activespot" url="floorplan/hotspot-floorplan-active.png" keep="true" visible="false" align="center" zorder="3" edge="center"   /> 
+
+
+
+     <!-- activated hotpot -->
+
+    
+
+    <action name="activatespot">
+        set(plugin[activespot].parent, plugin[%1]);
+        set(plugin[activespot].visible, true);
+        
+        copy(plugin[radar].x, plugin[%1].x);
+        copy(plugin[radar].y, plugin[%1].y);
+        
+        set(plugin[radar].visible, true);
+        set(plugin[radar].heading, %2);
+    </action>
+    
+    <plugin name="radar"
+            url="%SWFPATH%/plugins/radar.swf"
+            alturl="%SWFPATH%/plugins/radar.js"
+            zorder="1"
+            keep="true"
+            heading="0"
+            align="lefttop"
+            edge="center"
+            x="0" y="0"
+            fillcolor="0x3b3b3b"
+            scale="0.4"
+            visible="false"  
+            editmode="false" 
+            />
+            
+
+<layer name="floorplan_button" keep="true" url="images/infobutton_ecard.png" crop="0|74|200|37" align="rightcenter" X="-160" Y="-60" zorder="12" onclick="showfloorplan()" onover="tween(layer[floorplan_button].x,0);" onout="tween(layer[floorplan_button].x,-160);"  />
+
+
+
+
+
+
+
+
+<action name="showfloorplan">
+set(layer[floorplan_button].onclick,hidefloorplan());
+set(layer[floorplan_button].crop,0|112|200|37);
+tween(plugin[map].x,55); 
+</action>
+
+
+
+
+<action name="hidefloorplan">
+set(layer[floorplan_button].onclick,showfloorplan());
+set(layer[floorplan_button].crop,0|74|200|37);
+tween(plugin[map].x,-1000);
+</action>
+
+
+
+		
+<action name="hideallfloorplans">		
+		set(plugin[radar].visible,false);	
+</action> 
+        
+
+
+
+
+
+<action name="map_floorplan">
+		set(plugin[floorplan_button].visible,true);
+		set(plugin[map].visible,true);		
+		set(plugin[radar].visible,true);	
+		set(plugin[radar].parent,map);	
+</action>
+
+
+
+
+</krpano>

@@ -1,0 +1,460 @@
+<krpano>
+
+
+<action name="default_actions">
+hide_all_sub_menu();
+hideallfloorplans();
+stoptween();
+hideallinfos();
+reset_all_video();
+hideinfo();
+</action>
+<!-- addscenenames(); -->
+
+
+<events onmousedown="hideall();"  />
+        
+
+
+
+<action name="global_actions">
+
+set(scene[scene_1teeingoff].onstart,default_actions();show_sub_menu-1_1(););
+set(scene[scene_1fairway].onstart,default_actions();show_sub_menu-1_1(););
+
+set(scene[scene_2teeingoff].onstart,default_actions();show_sub_menu-1_2(););
+set(scene[scene_2fairway].onstart,default_actions();show_sub_menu-1_2(););
+
+set(scene[scene_3teeingoff].onstart,default_actions();show_sub_menu-1_3(););
+set(scene[scene_3fairway].onstart,default_actions();show_sub_menu-1_3(););
+
+set(scene[scene_4teeingoff].onstart,default_actions();show_sub_menu-1_4(););
+set(scene[scene_4fairway].onstart,default_actions();show_sub_menu-1_4(););
+
+set(scene[scene_05teeingoff].onstart,default_actions(););
+
+set(scene[scene_teeingoff].onstart,default_actions();show_sub_menu-1_6(););
+set(scene[scene_6fairway1].onstart,default_actions();show_sub_menu-1_6(););
+set(scene[scene_6fairway2].onstart,default_actions();show_sub_menu-1_6(););
+
+set(scene[scene_7teeingoff].onstart,default_actions(););
+
+set(scene[scene_8teeingoff].onstart,default_actions();show_sub_menu-1_8(););
+set(scene[scene_8fairway].onstart,default_actions();show_sub_menu-1_8(););
+
+set(scene[scene_9teeingoff].onstart,default_actions();show_sub_menu-1_9(););
+set(scene[scene_9fairway1].onstart,default_actions();show_sub_menu-1_9(););
+set(scene[scene_9fairway2].onstart,default_actions();show_sub_menu-1_9(););
+
+set(scene[scene_10teeingoff].onstart,default_actions();show_sub_menu-1_10(););
+set(scene[scene_10fairway].onstart,default_actions();show_sub_menu-1_10(););
+
+set(scene[scene_11teeingoff].onstart,default_actions();show_sub_menu-1_11(););
+set(scene[scene_11fairway1].onstart,default_actions();show_sub_menu-1_11(););
+set(scene[scene_11fairway2].onstart,default_actions();show_sub_menu-1_11(););
+
+set(scene[scene_12teeingoff].onstart,default_actions();show_sub_menu-1_12(););
+set(scene[scene_12fairway].onstart,default_actions();show_sub_menu-1_12(););
+
+set(scene[scene_13teeingoff].onstart,default_actions();show_sub_menu-1_13(););
+set(scene[scene_13fairway].onstart,default_actions();show_sub_menu-1_13(););
+
+set(scene[scene_imperialgolfhole14].onstart,default_actions(););
+
+set(scene[scene_15_teeing_off].onstart,default_actions();show_sub_menu-1_15(););
+set(scene[scene_15fairway].onstart,default_actions();show_sub_menu-1_15(););
+
+set(scene[scene_16_teeing_off].onstart,default_actions(););
+
+set(scene[scene_17teeingoff].onstart,default_actions();show_sub_menu-1_17(););
+set(scene[scene_17fairway].onstart,default_actions();show_sub_menu-1_17(););
+
+set(scene[scene_18_teeingoff].onstart,default_actions();show_sub_menu-1_18(););
+set(scene[scene_18fairway1].onstart,default_actions();show_sub_menu-1_18(););
+set(scene[scene_18_fairway2].onstart,default_actions();show_sub_menu-1_18(););
+
+</action>
+
+
+<action name="show_scenes-1">
+tween(plugin[pannel_bg1].y,5);
+set(plugin[menu1].crop,'20|26|100|26');
+</action>
+
+<action name="show_scenes-2">
+tween(plugin[pannel_bg2].y,5);
+set(plugin[menu2].crop,'125|26|135|26');
+</action>
+
+
+<action name="show_scenes-3">
+tween(plugin[pannel_bg3].y,5);
+set(plugin[menu3].crop,'260|26|85|26');
+</action>
+
+<action name="show_scenes-4">
+tween(plugin[pannel_bg4].y,5);
+set(plugin[menu4].crop,'340|26|85|26');
+</action>
+
+
+<action name="hideall">
+tween(plugin[pannel_bg1].y,-300);
+tween(plugin[pannel_bg2].y,-500);
+tween(plugin[pannel_bg3].y,-300);
+tween(plugin[pannel_bg4].y,-300);
+
+set(plugin[menu1].crop,'20|0|100|26');
+set(plugin[menu2].crop,'125|0|135|26');
+set(plugin[menu3].crop,'260|0|85|26');
+set(plugin[menu4].crop,'340|0|85|26');
+
+</action>
+
+
+<!-- sub_menu_panel Actions -->
+<action name="hide_all_sub_menu">
+
+hide_sub_menu-1_1();
+hide_sub_menu-1_2();
+hide_sub_menu-1_3();
+hide_sub_menu-1_4();
+hide_sub_menu-1_5();
+hide_sub_menu-1_6();
+hide_sub_menu-1_7();
+hide_sub_menu-1_8();
+hide_sub_menu-1_9();
+hide_sub_menu-1_10();
+hide_sub_menu-1_11();
+hide_sub_menu-1_12();
+hide_sub_menu-1_13();
+hide_sub_menu-1_15();
+hide_sub_menu-1_16();
+hide_sub_menu-1_17();
+hide_sub_menu-1_18();
+
+set(layer[menuholder].visible,0);
+
+</action>
+
+<action name="show_sub_menu-1_1">
+hide_all_sub_menu();
+set(plugin[sub_tab_1_1_1].visible,1);
+set(plugin[sub_tab_1_1_2].visible,1);
+
+set(layer[menuholder].visible,1);
+</action>
+
+<action name="hide_sub_menu-1_1">
+set(plugin[sub_tab_1_1_1].visible,0);
+set(plugin[sub_tab_1_1_2].visible,0);
+
+</action>
+
+<action name="show_sub_menu-1_2">
+hide_all_sub_menu();
+set(plugin[sub_tab_1_2_1].visible,1);
+set(plugin[sub_tab_1_2_2].visible,1);
+
+set(layer[menuholder].visible,1);
+</action>
+
+<action name="hide_sub_menu-1_2">
+set(plugin[sub_tab_1_2_1].visible,0);
+set(plugin[sub_tab_1_2_2].visible,0);
+
+</action>
+
+<action name="show_sub_menu-1_3">
+hide_all_sub_menu();
+set(plugin[sub_tab_1_3_1].visible,1);
+set(plugin[sub_tab_1_3_2].visible,1);
+
+set(layer[menuholder].visible,1);
+</action>
+
+<action name="hide_sub_menu-1_3">
+set(plugin[sub_tab_1_3_1].visible,0);
+set(plugin[sub_tab_1_3_2].visible,0);
+
+</action>
+
+<action name="show_sub_menu-1_4">
+hide_all_sub_menu();
+set(plugin[sub_tab_1_4_1].visible,1);
+set(plugin[sub_tab_1_4_2].visible,1);
+
+set(layer[menuholder].visible,1);
+</action>
+
+<action name="hide_sub_menu-1_4">
+set(plugin[sub_tab_1_4_1].visible,0);
+set(plugin[sub_tab_1_4_2].visible,0);
+
+</action>
+
+<action name="show_sub_menu-1_6">
+hide_all_sub_menu();
+set(plugin[sub_tab_1_6_1].visible,1);
+set(plugin[sub_tab_1_6_2].visible,1);
+set(plugin[sub_tab_1_6_3].visible,1);
+
+set(layer[menuholder].visible,1);
+</action>
+
+<action name="hide_sub_menu-1_6">
+set(plugin[sub_tab_1_6_1].visible,0);
+set(plugin[sub_tab_1_6_2].visible,0);
+set(plugin[sub_tab_1_6_3].visible,0);
+
+</action>
+
+<action name="show_sub_menu-1_8">
+hide_all_sub_menu();
+set(plugin[sub_tab_1_8_1].visible,1);
+set(plugin[sub_tab_1_8_2].visible,1);
+
+set(layer[menuholder].visible,1);
+</action>
+
+<action name="hide_sub_menu-1_8">
+set(plugin[sub_tab_1_8_1].visible,0);
+set(plugin[sub_tab_1_8_2].visible,0);
+
+</action>
+
+<action name="show_sub_menu-1_9">
+hide_all_sub_menu();
+set(plugin[sub_tab_1_9_1].visible,1);
+set(plugin[sub_tab_1_9_2].visible,1);
+set(plugin[sub_tab_1_9_3].visible,1);
+
+set(layer[menuholder].visible,1);
+</action>
+
+<action name="hide_sub_menu-1_9">
+set(plugin[sub_tab_1_9_1].visible,0);
+set(plugin[sub_tab_1_9_2].visible,0);
+set(plugin[sub_tab_1_9_3].visible,0);
+
+</action>
+
+<action name="show_sub_menu-1_10">
+hide_all_sub_menu();
+set(plugin[sub_tab_1_10_1].visible,1);
+set(plugin[sub_tab_1_10_2].visible,1);
+
+set(layer[menuholder].visible,1);
+</action>
+
+<action name="hide_sub_menu-1_10">
+set(plugin[sub_tab_1_10_1].visible,0);
+set(plugin[sub_tab_1_10_2].visible,0);
+
+</action>
+
+<action name="show_sub_menu-1_11">
+hide_all_sub_menu();
+set(plugin[sub_tab_1_11_1].visible,1);
+set(plugin[sub_tab_1_11_2].visible,1);
+set(plugin[sub_tab_1_11_3].visible,1);
+
+set(layer[menuholder].visible,1);
+</action>
+
+<action name="hide_sub_menu-1_11">
+set(plugin[sub_tab_1_11_1].visible,0);
+set(plugin[sub_tab_1_11_2].visible,0);
+set(plugin[sub_tab_1_11_3].visible,0);
+
+</action>
+
+<action name="show_sub_menu-1_12">
+hide_all_sub_menu();
+set(plugin[sub_tab_1_12_1].visible,1);
+set(plugin[sub_tab_1_12_2].visible,1);
+
+set(layer[menuholder].visible,1);
+</action>
+
+<action name="hide_sub_menu-1_12">
+set(plugin[sub_tab_1_12_1].visible,0);
+set(plugin[sub_tab_1_12_2].visible,0);
+
+</action>
+
+<action name="show_sub_menu-1_13">
+hide_all_sub_menu();
+set(plugin[sub_tab_1_13_1].visible,1);
+set(plugin[sub_tab_1_13_2].visible,1);
+
+set(layer[menuholder].visible,1);
+</action>
+
+<action name="hide_sub_menu-1_13">
+set(plugin[sub_tab_1_13_1].visible,0);
+set(plugin[sub_tab_1_13_2].visible,0);
+
+</action>
+
+<action name="show_sub_menu-1_15">
+hide_all_sub_menu();
+set(plugin[sub_tab_1_15_1].visible,1);
+set(plugin[sub_tab_1_15_2].visible,1);
+
+set(layer[menuholder].visible,1);
+</action>
+
+<action name="hide_sub_menu-1_15">
+set(plugin[sub_tab_1_15_1].visible,0);
+set(plugin[sub_tab_1_15_2].visible,0);
+
+</action>
+
+<action name="show_sub_menu-1_17">
+hide_all_sub_menu();
+set(plugin[sub_tab_1_17_1].visible,1);
+set(plugin[sub_tab_1_17_2].visible,1);
+
+set(layer[menuholder].visible,1);
+</action>
+
+<action name="hide_sub_menu-1_17">
+set(plugin[sub_tab_1_17_1].visible,0);
+set(plugin[sub_tab_1_17_2].visible,0);
+
+</action>
+
+<action name="show_sub_menu-1_18">
+hide_all_sub_menu();
+set(plugin[sub_tab_1_18_1].visible,1);
+set(plugin[sub_tab_1_18_2].visible,1);
+set(plugin[sub_tab_1_18_3].visible,1);
+
+set(layer[menuholder].visible,1);
+</action>
+
+<action name="hide_sub_menu-1_18">
+set(plugin[sub_tab_1_18_1].visible,0);
+set(plugin[sub_tab_1_18_2].visible,0);
+set(plugin[sub_tab_1_18_3].visible,0);
+
+</action>
+
+
+<style name="menustyle" devices="all"
+	      url="%SWFPATH%/plugins/textfield.swf" children="false"
+	      height="20" align="center" edge="center" zorder="12"  Y="0" 
+	      background="false" borderwidth="0"  selectable="false"
+	      css="p{color:#ffffff; font-family:Helvetica; font-weight:bold; font-size:11.5px;  text-align:center; }" 
+		   />
+		   
+
+    <style name="textstyle" devices="flash"
+           url="%SWFPATH%/plugins/textfield.swf" keep="true" x="5" width="170"  height="22" visible="true" 
+           borderwidth="0" children="false"  background="false" backgroundcolor="0x9c7844"
+           handcursor="1" align="topleft" selectable="false"  
+           css="p{color:#888888; font-family:Helvetica; font-weight:normal; margin-left:10; font-size:14px;   text-align:left;}"
+           onhover="set(css,p{color:#ffffff; font-family:Helvetica; font-weight:normal; margin-left:10; font-size:14px;   text-align:left;}"
+           onout="set(css,p{color:#888888; font-family:Helvetica; font-weight:normal; margin-left:10; font-size:14px;   text-align:left;}"
+           />
+ 
+           
+           
+    <style name="textstyle" devices="html5"
+           url="%SWFPATH%/plugins/textfield.swf" keep="true" x="10" width="170"  height="22" visible="true" 
+           borderwidth="0" children="false"  background="false" backgroundcolor="0x9c7844"
+           handcursor="1" align="topleft" selectable="false" 
+           css="p{color:#ffffff; font-family:Helvetica; font-weight:normal; margin-left:10; font-size:14px;   text-align:left;}"
+           />
+
+
+     
+      <style name="sub_textstyle" 
+           url="%SWFPATH%/plugins/textfield.swf" keep="true" height="25" visible="true" background="true" zorder="15" backgroundcolor="0xa2a06f"
+           borderwidth="0" children="false" roundedge="3"  backgroundalpha="0.75"  
+           handcursor="1" align="topleft" selectable="true"  vcenter="true"
+           css="p{color:#ffffff; font-family:Thoma;  font-size:13px;  text-align:center;text-transform: uppercase;} "
+           onhover="set(css,p{color:#000000; font-family:Thoma;  font-size:13px;  text-align:center; text-transform: uppercase;})"
+           onout="set(css,p{color:#ffffff; font-family:Thoma;  font-size:13px;  text-align:center; text-transform: uppercase;})"
+            />  
+
+        
+    <style name="sub_menu" 
+           url="%SWFPATH%/plugins/textfield.swf" keep="true" height="30" visible="true" background="false" 
+           borderwidth="0" children="false" roundedge="3"  backgroundalpha="0.79"  
+           handcursor="1" align="center" selectable="fasle"  vcenter="true"
+           css="p{color:#424242; font-family:Thoma; font-weight:regular; font-size:13px;  text-align:center;} "         
+            /> 
+	
+
+	<layer name="menuholder" align="topleft" type="container" keep="true" x="-175" y="90"  width="200" height="500" bgcolor="0x000000" bgalpha="0" >
+		
+<layer name="submenubar" align="topleft" type="container" keep="true" x="-20" y="0"  width="230" height="30" bgcolor="0xffffff" bgalpha="0.9"  >	
+	
+	<plugin name="submenu" style="sub_menu" y="0"  x="0"  html="[p]SUB MENU[/p]"   width="160" onclick="hidesubmenu()"   />
+ <plugin name="menuarrow" url="images/arrow.png"  keep="true" X="20" Y="0" align="rightcenter" rotate="180" edge="center" zorder="11" handcursor="1" onclick="showsubmenu()"  /> 	
+</layer>	
+
+
+	<plugin name="sub_tab_1_1_1" style="sub_textstyle" y="70"  x="30"  html="[p]Second Shot[/p]" 		width="120"   onclick="loadscene(scene_1fairway);hideall();" />     
+    <plugin name="sub_tab_1_1_2" style="sub_textstyle" y="40"  x="30"  html="[p]Teeing Off[/p]" 	width="120"   onclick="loadscene(scene_1teeingoff);hideall();" />       
+
+	<plugin name="sub_tab_1_2_1" style="sub_textstyle" y="70"  x="30"  html="[p]Second Shot[/p]" 		width="120"   onclick="loadscene(scene_2fairway);hideall();" />     
+    <plugin name="sub_tab_1_2_2" style="sub_textstyle" y="40"  x="30"  html="[p]Teeing Off[/p]" 	width="120"   onclick="loadscene(scene_2teeingoff);hideall();" />       
+
+	<plugin name="sub_tab_1_3_1" style="sub_textstyle" y="70"  x="30"  html="[p]Second Shot[/p]" 		width="120"   onclick="loadscene(scene_3fairway);hideall();" />     
+    <plugin name="sub_tab_1_3_2" style="sub_textstyle" y="40"  x="30"  html="[p]Teeing Off[/p]" 	width="120"   onclick="loadscene(scene_3teeingoff);hideall();" />       
+
+	<plugin name="sub_tab_1_4_1" style="sub_textstyle" y="70"  x="10"  html="[p]Second Shot[/p]" 		width="120"   onclick="loadscene(scene_4fairway);hideall();" />     
+    <plugin name="sub_tab_1_4_2" style="sub_textstyle" y="40"  x="10"  html="[p]Teeing Off[/p]" 	width="120"   onclick="loadscene(scene_4teeingoff);hideall();" />       
+
+	<plugin name="sub_tab_1_6_1" style="sub_textstyle" y="70"  x="30"  html="[p]Second Shot[/p]" 	width="120"   onclick="loadscene(scene_6fairway1);hideall();" />     
+    <plugin name="sub_tab_1_6_2" style="sub_textstyle" y="100"  x="30"  html="[p]Third Shot[/p]" 	width="120"   onclick="loadscene(scene_6fairway2);hideall();" />       
+  	<plugin name="sub_tab_1_6_3" style="sub_textstyle" y="40"  x="30"  html="[p]Teeing Off[/p]" 	width="120"   onclick="loadscene(scene_teeingoff);hideall();" />       
+
+	<plugin name="sub_tab_1_8_1" style="sub_textstyle" y="70"  x="30"  html="[p]Second Shot[/p]" 		width="120"   onclick="loadscene(scene_8fairway);hideall();" />     
+    <plugin name="sub_tab_1_8_2" style="sub_textstyle" y="40"  x="30"  html="[p]Teeing Off[/p]" 	width="120"   onclick="loadscene(scene_8teeingoff);hideall();" />       
+
+	<plugin name="sub_tab_1_9_1" style="sub_textstyle" y="70"  x="30"  html="[p]Second Shot[/p]" 	width="120"   onclick="loadscene(scene_9fairway1);hideall();" />     
+    <plugin name="sub_tab_1_9_2" style="sub_textstyle" y="100"  x="30"  html="[p]Third Shot[/p]" 	width="120"   onclick="loadscene(scene_9fairway2);hideall();" />       
+  	<plugin name="sub_tab_1_9_3" style="sub_textstyle" y="40"  x="30"  html="[p]Teeing Off[/p]" 	width="120"   onclick="loadscene(scene_9teeingoff);hideall();" />       
+
+	<plugin name="sub_tab_1_10_1" style="sub_textstyle" y="70"  x="30"  html="[p]Second Shot[/p]" 		width="120"   onclick="loadscene(scene_10fairway);hideall();" />     
+    <plugin name="sub_tab_1_10_2" style="sub_textstyle" y="40"  x="30"  html="[p]Teeing Off[/p]" 	width="120"   onclick="loadscene(scene_10teeingoff);hideall();" />       
+
+	<plugin name="sub_tab_1_11_1" style="sub_textstyle" y="70"  x="30"  html="[p]Second Shot[/p]" 	width="120"   onclick="loadscene(scene_11fairway1);hideall();" />     
+    <plugin name="sub_tab_1_11_2" style="sub_textstyle" y="100"  x="30"  html="[p]Third Shot[/p]" 	width="120"   onclick="loadscene(scene_11fairway2);hideall();" />       
+  	<plugin name="sub_tab_1_11_3" style="sub_textstyle" y="40"  x="30"  html="[p]Teeing Off[/p]" 	width="120"   onclick="loadscene(scene_11teeingoff);hideall();" />       
+
+	<plugin name="sub_tab_1_12_1" style="sub_textstyle" y="70"  x="30"  html="[p]Second Shot[/p]" 		width="120"   onclick="loadscene(scene_12fairway);hideall();" />     
+    <plugin name="sub_tab_1_12_2" style="sub_textstyle" y="40"  x="30"  html="[p]Teeing Off[/p]" 	width="120"   onclick="loadscene(scene_12teeingoff);hideall();" />       
+
+	<plugin name="sub_tab_1_13_1" style="sub_textstyle" y="70"  x="30"  html="[p]Second Shot[/p]" 		width="120"   onclick="loadscene(scene_13fairway);hideall();" />     
+    <plugin name="sub_tab_1_13_2" style="sub_textstyle" y="40"  x="30"  html="[p]Teeing Off[/p]" 	width="120"   onclick="loadscene(scene_13teeingoff);hideall();" />       
+
+	<plugin name="sub_tab_1_15_1" style="sub_textstyle" y="70"  x="30"  html="[p]Second Shot[/p]" 		width="120"   onclick="loadscene(scene_15fairway);hideall();" />     
+    <plugin name="sub_tab_1_15_2" style="sub_textstyle" y="40"  x="30"  html="[p]Teeing Off[/p]" 	width="120"   onclick="loadscene(scene_15_teeing_off);hideall();" />       
+
+	<plugin name="sub_tab_1_17_1" style="sub_textstyle" y="70"  x="30"  html="[p]Second Shot[/p]" 		width="120"   onclick="loadscene(scene_17fairway);hideall();" />     
+    <plugin name="sub_tab_1_17_2" style="sub_textstyle" y="40"  x="30"  html="[p]Teeing Off[/p]" 	width="120"   onclick="loadscene(scene_17teeingoff);hideall();" />       
+
+	<plugin name="sub_tab_1_18_1" style="sub_textstyle" y="70"  x="30"  html="[p]Second Shot[/p]" 	width="120"   onclick="loadscene(scene_18fairway1);hideall();" />     
+    <plugin name="sub_tab_1_18_2" style="sub_textstyle" y="100"  x="30"  html="[p]Third Shot[/p]" 	width="120"   onclick="loadscene(scene_18_fairway2);hideall();" />       
+  	<plugin name="sub_tab_1_18_3" style="sub_textstyle" y="40"  x="30"  html="[p]Teeing Off[/p]" 	width="120"   onclick="loadscene(scene_18_teeingoff);hideall();" />       
+
+</layer>
+	
+<action name="hidesubmenu">
+tween(layer[menuholder].x,-175);
+tween(layer[menuarrow].rotate,180);
+set(layer[menuarrow].onclick,showsubmenu());
+</action>
+
+<action name="showsubmenu">
+tween(layer[menuholder].x,20);
+tween(layer[menuarrow].rotate,0);
+set(layer[menuarrow].onclick,hidesubmenu());
+</action>
+
+</krpano>

@@ -1,0 +1,99 @@
+<krpano >
+
+
+
+
+
+<!-- <layer name="map" url="images/map_bg.png" align="topright"  x="-400" y="5" keep="true" handcursor="false" >
+<layer name="closema_butt" url="skin/button.png" align="bottomleft"  x="0" y="2" keep="true" handcursor="true" alpha="0" onclick="close_map()" />  
+</layer> -->
+
+
+ <action name="showmap">
+      tween(layer[map_bg].x,0);
+      tween(layer[showmap].x,-200);
+      set(layer[aerialmap].onclick,close_map());
+</action>
+    
+
+ <action name="close_map">
+      tween(layer[map_bg].x,-400);
+      tween(layer[showmap].x,0);
+      set(layer[aerialmap].onclick,hidealltabs();showmap());
+</action>
+
+
+<plugin name="map_bg" url="images/map_bg.png" align="topright"  x="-400" y="115" keep="true" zorder="1" handcursor="false" />
+<layer name="closema_butt" parent="map_bg" zorder="3" url="images/map_close.png" align="bottomleft"  x="-5" y="-5" keep="true" handcursor="true" onclick="close_map()" />         
+<plugin name="map" 
+        url="plugins/bingmaps.swf" 
+        alturl="plugins/bingmaps.js" 
+        parent="map_bg"
+        zorder="2"
+        align="righttop" width="325" height="365" x="13" y="12"
+        keep="true"
+        key="AomVIJM6dsWn9DAY8g1Q56RvHG_NMrJ6dBKrPB4Tp2YESPLc1lY51Gla8Zhf0YrX"
+        maptype="satellite"
+        maptypes="normal|satellite|physical|hybrid"
+        lat="-8.679442" lng="115.154032"  
+        zoom="16"
+        viewmode="2D"
+        pitch="0.0"
+        roll="0.0"
+        yaw="0.0"
+        maphandcursor="false"
+        activespotenabled="true"
+        dragging="true"
+        scrollwheel="true"
+        continuouszoom="false"
+        dbclicking="false"
+        keyboard="false"
+        crosshairs="false"
+        bgcolor="0xE0E0E0"
+        bgalpha="1.0" >
+        
+        
+
+
+<maptypecontrol visible="true" align="righttop" x="2" y="2"  buttonalign="V"    />
+
+<navigationcontrol visible="true" align="lefttop" x="2" y="2"  />
+
+
+                   
+ <spotstyle name="Bar"
+                   url="images/bar.png"
+                   overurl="images/bar.png"
+                   activeurl="images/bar.png"
+                   edge="center" x="0" y="0" shadow="true"
+                    />                 
+                   
+ 
+  
+<radar visible="true"  dragable="true"  size="60"
+       zoomwithmap="false"
+       alpha="0.5"
+       fillcolor="0x7a7a7a"
+       fillalpha="1.0"
+       linewidth="0.0"
+       glow="true"
+       glowcolor="0xFFFFFF"
+       glowwidth="1"
+       glowstrength="1"
+        /> 
+       
+
+<spot name="sc01"  lat="-8.679442" lng="115.153487"    heading="-180" style="Bar" active="true" onclick="loadscene(scene_aerial1,null,MERGE,BLEND(1))" 
+ /> 
+ 
+<spot name="sc02" lat="-8.679423" lng="115.154255"  heading="10" style="Bar" active="false" onclick="loadscene(scene_aerial75,null,MERGE,BLEND(1))"
+ />
+ 
+
+
+</plugin>
+
+
+
+
+</krpano>

@@ -1,0 +1,454 @@
+<krpano>
+
+<style name="floorplan_spot" url="floorplan/hotspot-floorplan.png" keep="true" align="lefttop" edge="center" scale="0.8" zorder="2" onclick="if(linkedscene, loadscene(get(linkedscene),null,MERGE,BLEND(1)); );" />
+
+<!-- Hole 1 Floorplan -->
+
+<plugin name="hole1_fp" url="floorplan/hole1.png" scale="0.85" keep="true" align="topright"  zorder="9" x="-1000"  y="05" alpha="1" handcursor="true" visible="true" scalechildren="true"/>
+<plugin name="hole1_close" url="floorplan/floorplan_close.png" parent="hole1_fp"  keep="true" align="topright" zorder="21" x="-6"  y="-05" handcursor="true" onclick="hidefloorplan();" />
+ 
+<plugin name="teeing_hole1"	 	style="floorplan_spot" parent="hole1_fp" x="172" y="426" onhover="showtext(TEEING OFF,alttext);"  linkedscene="scene_1teeingoff" /> 
+<plugin name="second_hole1"		style="floorplan_spot" parent="hole1_fp" x="220" y="207" onhover="showtext(SECOND SHOT,alttext);" linkedscene="scene_1fairway" /> 
+
+
+<!-- Hole 2 Floorplan -->
+
+<plugin name="hole2_fp" url="floorplan/hole2.png" scale="0.85" keep="true" align="topright" zorder2="1" zorder="9" x="-1000"  y="05" alpha="1" handcursor="false" visible="false" scalechildren="true"/>
+<plugin name="hole2_close" url="floorplan/floorplan_close.png" parent="hole2_fp"  keep="true" align="topright" zorder="21" x="-06"  y="-05" handcursor="true" onclick="hidefloorplan();" />
+ 
+<plugin name="teeing_hole2" 	style="floorplan_spot" parent="hole2_fp" x="326" y="430" onhover="showtext(TEEING OFF,alttext);"  linkedscene="scene_2teeingoff" /> 
+<plugin name="second_hole2"		style="floorplan_spot" parent="hole2_fp" x="249" y="263" onhover="showtext(SECOND SHOT,alttext);" linkedscene="scene_2fairway" />  
+
+
+<!-- Hole 3 Floorplan -->
+
+<plugin name="hole3_fp" url="floorplan/hole3.png" scale="0.85" keep="true" align="topright" zorder2="1" zorder="9" x="-1000"  y="05" alpha="1" handcursor="false" visible="false" scalechildren="true"/>
+<plugin name="hole3_close" url="floorplan/floorplan_close.png" parent="hole3_fp"  keep="true" align="topright" zorder="-6" x="-5"  y="-5" handcursor="true" onclick="hidefloorplan();" />
+ 
+<plugin name="teeing_hole3" 	style="floorplan_spot" parent="hole3_fp" x="178" y="409" onhover="showtext(TEEING OFF,alttext);"  linkedscene="scene_3teeingoff" /> 
+<plugin name="second_hole3" 	style="floorplan_spot" parent="hole3_fp" x="241" y="194" onhover="showtext(SECOND SHOT,alttext);" linkedscene="scene_3fairway" /> 
+
+<!--  deluxe room king Floorplan -->
+
+
+
+
+<!-- Hole 4 Floorplan -->	
+
+<plugin name="hole4_fp" 	 url="floorplan/hole4.png"  scale="0.85" keep="true" align="topright" zorder2="1" zorder="9" x="-1000"  y="05" alpha="1" handcursor="false" visible="false" scalechildren="true"/>
+<plugin name="juniorsuite_close" url="floorplan/floorplan_close.png" parent="hole4_fp"  keep="true" align="topright" zorder="21" x="-6"  y="-5" handcursor="true" onclick="hidefloorplan();" />
+ 
+<plugin name="teeing_hole4" 	style="floorplan_spot" parent="hole4_fp" x="235" y="432" onhover="showtext(TEEING OFF,alttext);" 	linkedscene="scene_4teeingoff" /> 
+<plugin name="second_hole4" 	style="floorplan_spot" parent="hole4_fp" x="221" y="248" onhover="showtext(SECOND SHOT,alttext);"  	linkedscene="scene_4fairway" /> 
+
+
+<!-- Hole 5 Floorplan -->
+
+<plugin name="hole5_fp" url="floorplan/hole5.png" scale="0.85" keep="true" align="topright" zorder2="1" zorder="9" x="-1000"  y="05" alpha="1" handcursor="false" visible="false" scalechildren="true"/>
+<plugin name="hole5_close" url="floorplan/floorplan_close.png" parent="hole5_fp"  keep="true" align="topright" zorder="21" x="-6"  y="-5" handcursor="true" onclick="hidefloorplan();" />
+ 
+<plugin name="teeing_hole5" 	 style="floorplan_spot" parent="hole5_fp" x="240" y="406" onhover="showtext(TEEING OFF,alttext);" 	linkedscene="scene_05teeingoff" /> 
+
+
+<!-- Hole 6 Floorplan -->
+
+<plugin name="hole6_fp" 	  url="floorplan/hole6.png" scale="0.85" keep="true" align="topright" zorder2="1" zorder="9" x="-1000"  y="05" alpha="1" handcursor="false" visible="false" scalechildren="true"/>
+<plugin name="hole6_close" url="floorplan/floorplan_close.png" parent="hole6_fp"  keep="true" align="topright" zorder="21" x="-6"  y="-5" handcursor="true" onclick="hidefloorplan();" />
+
+<plugin name="teeing_hole6"   style="floorplan_spot" 	parent="hole6_fp" x="335" y="417"   onhover="showtext(TEEING OFF,alttext);"  	linkedscene="scene_teeingoff" /> 
+<plugin name="second_hole6"   style="floorplan_spot"    parent="hole6_fp" x="256" y="250"  onhover="showtext(SECOND SHOT ,alttext);"  	linkedscene="scene_6fairway1" /> 
+<plugin name="third_hole6"    style="floorplan_spot" 	parent="hole6_fp" x="195" y="139"  onhover="showtext(THIRD SHOT,alttext);"  	linkedscene="scene_6fairway2" /> 
+
+
+
+<!-- Hole 7 Floorplan -->
+
+<plugin name="hole7_fp" url="floorplan/hole7.png" scale="0.85" keep="true" align="topright" 	zorder2="1" zorder="9" x="-1000"  y="05" alpha="1" handcursor="false" visible="false" scalechildren="true"/>
+<plugin name="hole7_close" url="floorplan/floorplan_close.png" parent="hole7_fp"  keep="true" align="topright" zorder="21" x="-6"  y="-5" handcursor="true" onclick="hidefloorplan();" />
+ 
+<plugin name="teeing_hole7" 	 style="floorplan_spot" parent="hole7_fp" x="237"  y="418" onhover="showtext(TEEING OFF,alttext);"	 linkedscene="scene_7teeingoff" /> 
+
+
+
+<!-- Hole 8 Floorplan -->
+
+<plugin name="hole8_fp" 	  url="floorplan/hole8.png" scale="0.85" keep="true" align="topright" zorder2="1" zorder="9" x="-1000"  y="05" alpha="1" handcursor="false" visible="false" scalechildren="true"/>
+<plugin name="hole8_close" 	  url="floorplan/floorplan_close.png" parent="hole8_fp"  keep="true" align="topright" zorder="21" x="-6"  y="-5" handcursor="true" onclick="hidefloorplan();" />
+ 
+<plugin name="teeing_hole8"     style="floorplan_spot" parent="hole8_fp" x="307"  y="406" onhover="showtext(TEEING OFF,alttext);"  		 linkedscene="scene_8teeingoff" /> 
+<plugin name="second_hole8" 	style="floorplan_spot" parent="hole8_fp" x="268"  y="248" onhover="showtext(SECOND SHOT,alttext);"  	 linkedscene="scene_8fairway" /> 
+
+
+<!-- Hole 9 Floorplan -->
+
+<plugin name="hole9_fp" 	 url="floorplan/hole9.png" scale="0.85" keep="true" align="topright" zorder2="1" zorder="9" x="-1000"  y="05" alpha="1" handcursor="false" visible="false" scalechildren="true"/>
+<plugin name="hole9_close" url="floorplan/floorplan_close.png" parent="hole9_fp"  keep="true" align="topright" zorder="21" x="-6"  y="-5" handcursor="true" onclick="hidefloorplan();" />
+
+<plugin name="teeing_hole9"  style="floorplan_spot" parent="hole9_fp" x="186" y="435" onhover="showtext(TEEING OFF,alttext);" 	linkedscene="scene_9teeingoff" />  
+<plugin name="second_hole9"  style="floorplan_spot" parent="hole9_fp" x="211" y="249" onhover="showtext(SECOND SHOT,alttext);"  linkedscene="scene_9fairway1" /> 
+<plugin name="third_hole9"   style="floorplan_spot" parent="hole9_fp" x="280" y="133" onhover="showtext(THIRD SHOT,alttext);" 	linkedscene="scene_9fairway2" /> 
+
+
+
+
+<!-- Hole 10 Floorplan -->
+
+<plugin name="hole10_fp" url="floorplan/hole10.png"  scale="0.85" keep="true" align="topright" zorder2="1" zorder="9" x="-1000"  y="05" alpha="1" handcursor="false" visible="false" scalechildren="true"/>
+<plugin name="hole10_close" url="floorplan/floorplan_close.png" parent="hole10_fp"  keep="true" align="topright" zorder="21" x="-6"  y="-5" handcursor="true" onclick="hidefloorplan();" />
+
+<plugin name="teeing_hole10"  style="floorplan_spot" parent="hole10_fp" x="317"   y="432" onhover="showtext(TEEING OFF,alttext);" 	 	 linkedscene="scene_10teeingoff" />  
+<plugin name="second_hole10"  style="floorplan_spot" parent="hole10_fp" x="238"   y="217" onhover="showtext(SECOND SHOT,alttext);"  	 linkedscene="scene_10fairway" /> 
+
+
+<!-- Hole 11 Floorplan -->
+
+<plugin name="hole11_fp" url="floorplan/hole11.png"  scale="0.85" keep="true" align="topright" zorder2="1" zorder="9" x="-1000"  y="05" alpha="1" handcursor="false" visible="false" scalechildren="true"/>
+<plugin name="hole11_close" url="floorplan/floorplan_close.png" parent="hole11_fp"  keep="true" align="topright" zorder="21" x="-6"  y="-5" handcursor="true" onclick="hidefloorplan();" />
+ 
+<plugin name="teeing_hole11" 	style="floorplan_spot" parent="hole11_fp" x="197" y="434" onhover="showtext(TEEING OFF,alttext);"  		linkedscene="scene_11teeingoff" /> 
+<plugin name="second_hole11" 	style="floorplan_spot" parent="hole11_fp" x="237" y="312" onhover="showtext(SECOND SHOT,alttext);" 	 	linkedscene="scene_11fairway1" /> 
+<plugin name="third_hole11"   	style="floorplan_spot" parent="hole11_fp" x="269" y="206" onhover="showtext(THIRD SHOT,alttext);"       linkedscene="scene_11fairway2" /> 
+
+<!--  gardensuite Floorplan -->	
+
+
+
+<!-- Hole 12 Floorplan -->
+
+<plugin name="hole12_fp" url="floorplan/hole12.png"  scale="0.85" keep="true" align="topright" zorder2="1" zorder="9" x="-1000"  y="05" alpha="1" handcursor="false" visible="false" scalechildren="true"/>
+<plugin name="hole12_close" url="floorplan/floorplan_close.png" parent="hole12_fp"  keep="true" align="topright" zorder="21" x="-6"  y="-5" handcursor="true" onclick="hidefloorplan();" />
+
+<plugin name="teeing_hole12" 	style="floorplan_spot" parent="hole12_fp"   x="302" y="425" onhover="showtext(TEEING OFF,alttext);"  linkedscene="scene_12teeingoff" />  
+<plugin name="second_hole12" 	style="floorplan_spot" parent="hole12_fp"   x="248" y="269" onhover="showtext(SECOND SHOT,alttext);" linkedscene="scene_12fairway" /> 
+
+
+
+
+<!-- Hole 13 Floorplan -->
+
+
+<plugin name="hole13_fp"    url="floorplan/hole13.png"  scale="0.85" keep="true" align="topright" zorder2="1" zorder="9" x="-1000"  y="05" alpha="1" handcursor="false" visible="false" scalechildren="true"/>
+<plugin name="hole13_close" url="floorplan/floorplan_close.png" parent="hole13_fp"  keep="true" align="topright" zorder="21" x="-6"  y="-5" handcursor="true" onclick="hidefloorplan();" />
+ 
+<plugin name="teeing_hole13" 	  style="floorplan_spot" parent="hole13_fp" x="207" y="425" onhover="showtext(TEEING OFF,alttext);" 	linkedscene="scene_13teeingoff" /> 
+<plugin name="second_hole13" 	  style="floorplan_spot" parent="hole13_fp" x="268" y="226" onhover="showtext(SECOND SHOT,alttext);" 	linkedscene="scene_13fairway" /> 
+
+
+
+<!-- Hole 13 Floorplan -->
+
+<plugin name="hole14_fp" url="floorplan/hole14.png" scale="0.85" keep="true" align="topright" zorder2="1" zorder="9" x="-1000"  y="05" alpha="1" handcursor="false" visible="false" scalechildren="true"/>
+<plugin name="hole14_close" url="floorplan/floorplan_close.png" parent="hole14_fp"  keep="true" align="topright" zorder="21" x="-6"  y="-5" handcursor="true" onclick="hidefloorplan();" />
+ 
+<plugin name="teeing_hole14" 	style="floorplan_spot" parent="hole14_fp" x="218" y="341" onhover="showtext(TEEING OFF,alttext);" linkedscene="scene_imperialgolfhole14" /> 
+
+
+
+<!-- Hole 15 Floorplan -->
+
+<plugin name="hole15_fp" 	url="floorplan/hole15.png"  scale="0.85" keep="true" align="topright" zorder2="1" zorder="9" x="-1000"  y="05" alpha="1" handcursor="false" visible="false" scalechildren="true"/>
+<plugin name="hole15_close"  url="floorplan/floorplan_close.png" parent="hole15_fp"  keep="true" align="topright" zorder="21" x="-6"  y="-5" handcursor="true" onclick="hidefloorplan();" />
+ 
+<plugin name="teeing_hole15" 	style="floorplan_spot"     parent="hole15_fp" x="174" y="425"  onhover="showtext(TEEING OFF,alttext);" 		  linkedscene="scene_15_teeing_off" /> 
+<plugin name="second_hole15" 	style="floorplan_spot" 	   parent="hole15_fp" x="240" y="229"  onhover="showtext(SECOND SHOT,alttext);" 	  linkedscene="scene_15fairway" /> 
+
+
+
+
+<!-- Hole 16 Floorplan -->
+
+<plugin name="hole16_fp" url="floorplan/hole16.png" scale="0.85" keep="true" align="topright" zorder2="1" zorder="9" x="-1000"  y="05" alpha="1" handcursor="false" visible="false" scalechildren="true"/>
+<plugin name="hole16_close" url="floorplan/floorplan_close.png" parent="hole16_fp"  keep="true" align="topright" zorder="21" x="-6"  y="-5" handcursor="true" onclick="hidefloorplan();" />
+ 
+<plugin name="teeing_hole16" 	style="floorplan_spot" 	parent="hole16_fp" x="276" y="410"  onhover="showtext(TEEING OFF,alttext);" linkedscene="scene_16_teeing_off" /> 
+
+
+
+
+<!-- Hole 17 Floorplan -->
+
+<plugin name="hole17_fp" url="floorplan/hole17.png" scale="0.85" keep="true" align="topright" zorder2="1" zorder="9" x="-1000"  y="05" alpha="1" handcursor="false" visible="false" scalechildren="true"/>
+<plugin name="hole17_close" url="floorplan/floorplan_close.png" parent="hole17_fp"  keep="true" align="topright" zorder="21" x="-6"  y="-5" handcursor="true" onclick="hidefloorplan();" />
+ 
+<plugin name="teeing_hole17" 	style="floorplan_spot" parent="hole17_fp" x="180" y="390" onhover="showtext(TEEING OFF,alttext);" 		linkedscene="scene_17teeingoff" /> 
+<plugin name="second_hole17" 	style="floorplan_spot" parent="hole17_fp" x="280" y="200" onhover="showtext(SECOND SHOT,alttext);" 		linkedscene="scene_17fairway" /> 
+
+
+
+<!-- Hole 18 Floorplan -->
+
+<plugin name="hole18_fp" url="floorplan/hole18.png"  scale="0.85" keep="true" align="topright" zorder2="1" zorder="9" x="-1000"  y="05" alpha="1" handcursor="false" visible="false" scalechildren="true"/>
+<plugin name="hole18_close" url="floorplan/floorplan_close.png" parent="hole18_fp"  keep="true" align="topright" zorder="21" x="-6"  y="-5" handcursor="true" onclick="hidefloorplan();" />
+ 
+<plugin name="teeing_hole18" 	style="floorplan_spot" parent="hole18_fp" x="229"  y="432"  onhover="showtext(TEEING OFF,alttext);"   linkedscene="scene_18_teeingoff" /> 
+<plugin name="second_hole18"  	style="floorplan_spot" parent="hole18_fp" x="298" y="274"  onhover="showtext(SECOND SHOT,alttext);"   linkedscene="scene_18fairway1" /> 
+<plugin name="third_hole18" 	style="floorplan_spot" parent="hole18_fp" x="263" y="166"  onhover="showtext(THIRD SHOT,alttext);" 	  linkedscene="scene_18_fairway2" /> 
+
+
+
+
+
+<plugin name="activespot" url="floorplan/hotspot-floorplan-active.png" keep="true" scale="0.8" visible="false" align="center" zorder="3" edge="center"   /> 
+
+     <!-- activated hotpot -->
+
+    <action name="activatespot">
+        set(plugin[activespot].parent, plugin[%1]);
+        set(plugin[activespot].visible, true);
+        
+        copy(plugin[radar].x, plugin[%1].x);
+        copy(plugin[radar].y, plugin[%1].y);
+        
+        set(plugin[radar].visible, true);
+        set(plugin[radar].heading, %2);
+    </action>
+    
+    <plugin name="radar"
+            url="%SWFPATH%/plugins/radar.swf"
+            alturl="%SWFPATH%/plugins/radar.js"
+            zorder="1"
+            keep="true"
+            heading="0"
+            align="lefttop"
+            edge="center"
+            x="0" y="0"
+            fillcolor="0x3b3b3b"
+            scale="0.4"
+            visible="true"  
+            editmode="0" 
+            />
+
+<layer name="floorplan_button"  url="images/infobutton_ecard.png" crop="0|74|200|37"  keep="true" zorder="50"   align="centerright"  X="-160"  Y="-60"  
+	onover="tween(layer[floorplan_button].x,0);"  onout="tween(layer[floorplan_button].x,-160);" onclick="showfloorplan()"    />
+
+<action name="showfloorplan">
+set(layer[floorplan_button].crop,'0|112|200|37'); 
+set(layer[floorplan_button].onclick,hidefloorplan();); 
+
+tween(plugin[hole1_fp].x,50); 
+tween(plugin[hole2_fp].x,50); 
+tween(plugin[hole3_fp].x,50); 
+tween(plugin[hole4_fp].x,50);
+
+tween(plugin[hole5_fp].x,50); 
+tween(plugin[hole6_fp].x,50); 
+tween(plugin[hole7_fp].x,50); 
+tween(plugin[hole8_fp].x,50); 
+tween(plugin[hole9_fp].x,50); 
+tween(plugin[hole10_fp].x,50);
+tween(plugin[hole11_fp].x,50);
+tween(plugin[hole12_fp].x,50);
+tween(plugin[hole13_fp].x,50); 
+tween(plugin[hole14_fp].x,50);
+tween(plugin[hole15_fp].x,50); 
+tween(plugin[hole16_fp].x,50); 
+tween(plugin[hole17_fp].x,50);
+tween(plugin[hole18_fp].x,50);
+
+
+</action>
+
+
+
+
+<action name="hidefloorplan">
+set(layer[floorplan_button].crop,'0|74|200|37'); 
+set(layer[floorplan_button].onclick,showfloorplan();); 
+
+tween(plugin[hole1_fp].x,-1000);
+tween(plugin[hole2_fp].x,-1000);
+tween(plugin[hole3_fp].x,-1000);
+tween(plugin[hole4_fp].x,-1000);
+
+tween(plugin[hole5_fp].x,-1000);
+tween(plugin[hole6_fp].x,-1000);
+tween(plugin[hole7_fp].x,-1000);
+tween(plugin[hole8_fp].x,-1000);
+tween(plugin[hole9_fp].x,-1000);
+tween(plugin[hole10_fp].x,-1000);
+tween(plugin[hole11_fp].x,-1000);
+tween(plugin[hole12_fp].x,-1000);
+tween(plugin[hole13_fp].x,-1000);
+tween(plugin[hole14_fp].x,-1000);
+tween(plugin[hole15_fp].x,-1000);
+tween(plugin[hole16_fp].x,-1000);
+tween(plugin[hole17_fp].x,-1000);
+tween(plugin[hole18_fp].x,-1000);
+
+</action>
+
+
+
+
+
+		<action name="hideallfloorplans">		
+		set(plugin[floorplan_button].visible,false);
+		set(plugin[radar].visible,false);		
+		
+		set(plugin[hole1_fp].visible,false);	
+		set(plugin[hole2_fp].visible,false);	
+		set(plugin[hole3_fp].visible,false);
+		set(plugin[hole4_fp].visible,false);
+
+		set(plugin[hole5_fp].visible,false);	
+		set(plugin[hole6_fp].visible,false);	
+		set(plugin[hole7_fp].visible,false);
+		set(plugin[hole8_fp].visible,false);	
+		set(plugin[hole9_fp].visible,false);		
+		set(plugin[hole10_fp].visible,false);	
+		set(plugin[hole11_fp].visible,false);
+		set(plugin[hole12_fp].visible,false);	
+		set(plugin[hole13_fp].visible,false);	
+		set(plugin[hole14_fp].visible,false);	
+		set(plugin[hole15_fp].visible,false);
+		set(plugin[hole16_fp].visible,false);
+		set(plugin[hole17_fp].visible,false);
+		set(plugin[hole18_fp].visible,false);
+	
+		</action> 
+        
+           
+
+<action name="hole1_fp_floorplan">
+		set(plugin[floorplan_button].visible,true);
+		
+		set(plugin[hole1_fp].visible,true);		
+		set(plugin[radar].visible,true);	
+		set(plugin[radar].parent,hole1_fp);	
+</action>
+
+<action name="hole2_fp_floorplan">
+		set(plugin[floorplan_button].visible,true);
+		set(plugin[hole2_fp].visible,true);		
+		set(plugin[radar].visible,true);	
+		set(plugin[radar].parent,hole2_fp);	
+</action>
+
+
+<action name="hole3_fp_floorplan">
+		set(plugin[floorplan_button].visible,true);
+		set(plugin[hole3_fp].visible,true);		
+		set(plugin[radar].visible,true);	
+		set(plugin[radar].parent,hole3_fp);	
+</action>
+
+<action name="hole4_fp_floorplan">
+		set(plugin[floorplan_button].visible,true);
+		set(plugin[hole4_fp].visible,true);		
+		set(plugin[radar].visible,true);	
+		set(plugin[radar].parent,hole4_fp);	
+</action>
+
+<action name="hole5_fp_floorplan">
+		set(plugin[floorplan_button].visible,true);
+		set(plugin[hole5_fp].visible,true);		
+		set(plugin[radar].visible,true);	
+		set(plugin[radar].parent,hole5_fp);	
+</action>
+
+
+
+<action name="hole6_fp_floorplan">
+		set(plugin[floorplan_button].visible,true);
+		set(plugin[hole6_fp].visible,true);		
+		set(plugin[radar].visible,true);	
+		set(plugin[radar].parent,hole6_fp);	
+</action>
+
+
+<action name="hole7_fp_floorplan">
+		set(plugin[floorplan_button].visible,true);
+		set(plugin[hole7_fp].visible,true);		
+		set(plugin[radar].visible,true);	
+		set(plugin[radar].parent,hole7_fp);	
+</action>
+
+
+
+<action name="hole8_fp_floorplan">
+		set(plugin[floorplan_button].visible,true);
+		set(plugin[hole8_fp].visible,true);		
+		set(plugin[radar].visible,true);	
+		set(plugin[radar].parent,hole8_fp);	
+</action>
+
+
+<action name="hole9_fp_floorplan">
+		set(plugin[floorplan_button].visible,true);
+		set(plugin[hole9_fp].visible,true);		
+		set(plugin[radar].visible,true);	
+		set(plugin[radar].parent,hole9_fp);	
+</action>
+
+<action name="hole10_fp_floorplan">
+		set(plugin[floorplan_button].visible,true);
+		set(plugin[hole10_fp].visible,true);		
+		set(plugin[radar].visible,true);	
+		set(plugin[radar].parent,hole10_fp);	
+</action>
+
+
+<action name="hole11_fp_floorplan">
+		set(plugin[floorplan_button].visible,true);
+		set(plugin[hole11_fp].visible,true);		
+		set(plugin[radar].visible,true);	
+		set(plugin[radar].parent,hole11_fp);	
+</action>
+
+<action name="hole12_fp_floorplan">
+		set(plugin[floorplan_button].visible,true);
+		set(plugin[hole12_fp].visible,true);		
+		set(plugin[radar].visible,true);	
+		set(plugin[radar].parent,hole12_fp);	
+</action>
+
+<action name="hole13_fp_floorplan">
+		set(plugin[floorplan_button].visible,true);
+		set(plugin[hole13_fp].visible,true);		
+		set(plugin[radar].visible,true);	
+		set(plugin[radar].parent,hole13_fp);	
+</action>
+
+<action name="hole14_fp_floorplan">
+		set(plugin[floorplan_button].visible,true);
+		set(plugin[hole14_fp].visible,true);		
+		set(plugin[radar].visible,true);	
+		set(plugin[radar].parent,hole14_fp);	
+</action>
+
+<action name="hole15_fp_floorplan">
+		set(plugin[floorplan_button].visible,true);
+		set(plugin[hole15_fp].visible,true);		
+		set(plugin[radar].visible,true);	
+		set(plugin[radar].parent,hole15_fp);	
+</action>
+
+<action name="hole16_fp_floorplan">
+		set(plugin[floorplan_button].visible,true);
+		set(plugin[hole16_fp].visible,true);		
+		set(plugin[radar].visible,true);	
+		set(plugin[radar].parent,hole16_fp);	
+</action>
+
+<action name="hole17_fp_floorplan">
+		set(plugin[floorplan_button].visible,true);
+		set(plugin[hole17_fp].visible,true);		
+		set(plugin[radar].visible,true);	
+		set(plugin[radar].parent,hole17_fp);	
+</action>
+
+<action name="hole18_fp_floorplan">
+		set(plugin[floorplan_button].visible,true);
+		set(plugin[hole18_fp].visible,true);		
+		set(plugin[radar].visible,true);	
+		set(plugin[radar].parent,hole18_fp);	
+</action>
+
+<action name="moderntwobedroom_fp_floorplan">
+		set(plugin[floorplan_button].visible,true);
+		set(plugin[moderntwobedroom_fp].visible,true);		
+		set(plugin[radar].visible,true);	
+		set(plugin[radar].parent,moderntwobedroom_fp);	
+</action>
+
+</krpano>
